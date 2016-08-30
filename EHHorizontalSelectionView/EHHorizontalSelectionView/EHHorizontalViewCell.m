@@ -10,8 +10,20 @@
 
 @implementation EHHorizontalViewCell
 
+
+
 - (void)awakeFromNib {
     [self createSelectedView];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        [[self class] loadStyles];
+    }
+    return self;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -19,6 +31,8 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        [[self class] loadStyles];
+        
         UILabel * l = [[UILabel alloc] init];
         [self addSubview:l];
         self.titleLabel = l;
@@ -34,7 +48,7 @@
         UIView * colView = [[UIView alloc] init];
         [self.selectedView addSubview:colView];
         self.coloredView = colView;
-        self.coloredView.backgroundColor = [[self class] defaultColor];
+        self.coloredView.backgroundColor = [[self class] tintColor];
         
         [self createSelectedView];
         
@@ -43,10 +57,49 @@
     return self;
 }
 
-+ (UIColor *)defaultColor
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    return [UIColor colorWithRed:0 green:122/255.0 blue:1 alpha:1];
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [[self class] loadStyles];
+    }
+    return self;
 }
+
++ (void)loadStyles
+{
+    @synchronized (_EHHorisontalSelectionStyles) {
+        
+        if (_EHHorisontalSelectionStyles == nil)
+        {
+            _EHHorisontalSelectionStyles = [[NSMutableDictionary alloc] init];
+        }
+        if ([_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] == nil)
+        {
+            [_EHHorisontalSelectionStyles setObject:[[self class] styles] forKey:[[self class] reuseIdentifier]];
+        }
+    }
+}
+
++ (NSMutableDictionary *)styles
+{
+    return [@{ @"tintColor" : [UIColor colorWithRed:0 green:122/255.0 blue:1 alpha:1],
+              @"font" : [UIFont fontWithName:@"HelveticaNeue" size:18.0],
+              @"fontMedium" : [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0],
+              @"cellGap" : @(_EHDefaultGap * 4),
+              @"needCentred" : @(YES)
+              } mutableCopy];
+}
+
++ (void)checkStyles
+{
+    if ([_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] == nil)
+    {
+        [[self class] loadStyles];
+    }
+}
+
 
 + (NSString * _Nonnull)reuseIdentifier
 {
@@ -58,25 +111,78 @@
     return YES;
 }
 
-+ (UIFont *)currentFont
+
++ (void)updateTintColor:(UIColor *)color
 {
-    return [UIFont fontWithName:@"HelveticaNeue" size:18.0];
+    [[self class] checkStyles];
+    
+    [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:color forKey:@"tintColor"];
 }
 
-+ (UIFont *)currentFontMedium
++ (void)updateFont:(UIFont *)font
 {
-    return [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0];
+    [[self class] checkStyles];
+    
+    [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:font forKey:@"font"];
 }
 
-+ (float)currentGap
++ (void)updateFontMedium:(UIFont *)font
 {
-    return _EHDefaultGap * 4;
+    [[self class] checkStyles];
+    
+    [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:font forKey:@"fontMedium"];
+}
+
++ (void)updateCellGap:(float)gap
+{
+    [[self class] checkStyles];
+    
+    [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:@(gap) forKey:@"cellGap"];
+}
+
++ (void)updateNeedCentered:(BOOL)needCentered
+{
+    [[self class] checkStyles];
+    
+    [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:@(needCentered) forKey:@"needCentered"];
+}
+
++ (UIColor *)tintColor
+{
+    [[self class] checkStyles];
+    
+    return [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"tintColor"];
+}
+
++ (UIFont *)font
+{
+    [[self class] checkStyles];
+    
+    return [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"font"];
+}
+
++ (UIFont *)fontMedium
+{
+    [[self class] checkStyles];
+    
+    return [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"fontMedium"];
+}
+
++ (float)cellGap
+{
+    [[self class] checkStyles];
+    
+    return [[[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"cellGap"] floatValue];
 }
 
 + (BOOL)needCentred
 {
-    return YES;
+    [[self class] checkStyles];
+    
+    return [[[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"needCentred"] boolValue];
 }
+
+
 
 - (void)setSelectedCell:(BOOL)selected fromCellRect:(CGRect)rect
 {
@@ -85,7 +191,7 @@
         self.selectedView.hidden = NO;
         
         [UIView animateWithDuration:!CGRectIsNull(rect) ? 0.3 : 0.0 animations:^{
-            self.titleLabel.font = [[self class] currentFontMedium];
+            self.titleLabel.font = [[self class] fontMedium];
             self.titleLabel.alpha = 1.0;
         }];
         
@@ -94,16 +200,16 @@
     {
         self.selectedView.hidden = YES;
         [UIView animateWithDuration:!CGRectIsNull(rect) ? 0.3 : 0.0 animations:^{
-            self.titleLabel.font = [[self class] currentFont];
+            self.titleLabel.font = [[self class] font];
             self.titleLabel.alpha = .5;
         }];
         
     }
 }
 
-- (void)createSelectedView
+- (UIView *)createSelectedView
 {
-    
+    return self.selectedView;
 }
 
 - (void)highlight:(BOOL)highlighted

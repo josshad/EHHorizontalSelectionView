@@ -11,7 +11,9 @@
 
 @implementation EHHorizontalLineViewCell
 
-+ (float)currentGap
+static float _EHHorizontalColorHeight = 4;
+
++ (float)cellGap
 {
     return _EHDefaultGap * 8;
 }
@@ -36,16 +38,28 @@
     return self.selectedView;
 }
 
+
+
++ (float)colorHeight
+{
+    return _EHHorizontalColorHeight;
+}
+
++ (void)updateColorHeight:(float)newH
+{
+    _EHHorizontalColorHeight = newH;
+}
+
 - (void)updateSelectedFrames
 {
     self.selectedView.frame = self.bounds;
-    self.coloredView.frame = CGRectMake(0, self.selectedView.bounds.size.height - 4, self.selectedView.bounds.size.width, 4);
+    self.coloredView.frame = CGRectMake(0, self.selectedView.bounds.size.height - [[self class] colorHeight], self.selectedView.bounds.size.width, [[self class] colorHeight]);
 }
 
 - (void)updateFramesForMovingFromRect:(CGRect)rect
 {
     self.selectedView.frame = CGRectMake(CGRectGetMinX(rect) - CGRectGetMinX(self.frame), 0, rect.size.width, self.selectedView.bounds.size.height);
-    self.coloredView.frame = CGRectMake(0, self.selectedView.bounds.size.height - 4, self.selectedView.bounds.size.width, 4);
+    self.coloredView.frame = CGRectMake(0, self.selectedView.bounds.size.height - [[self class] colorHeight], self.selectedView.bounds.size.width, [[self class] colorHeight]);
 }
 
 - (void)setSelectedCell:(BOOL)selected fromCellRect:(CGRect)rect
@@ -66,7 +80,7 @@
      
         
         [UIView animateWithDuration:!CGRectIsNull(rect) ? 0.3 : 0.0 animations:^{
-            self.titleLabel.font = [[self class] currentFontMedium];
+            self.titleLabel.font = [[self class] fontMedium];
             self.titleLabel.alpha = 1.0;
         }];
         
@@ -75,7 +89,7 @@
     {
         self.selectedView.hidden = YES;
         [UIView animateWithDuration:!CGRectIsNull(rect) ? 0.3 : 0.0 animations:^{
-            self.titleLabel.font = [[self class] currentFont];
+            self.titleLabel.font = [[self class] font];
             self.titleLabel.alpha = .5;
         } completion:^(BOOL finished) {
         }];

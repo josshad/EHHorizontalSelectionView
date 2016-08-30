@@ -11,6 +11,6 @@
 
 @interface EHHorizontalLineViewCell : EHHorizontalViewCell
 
-- (UIView *)createSelectedView;
++ (void)updateColorHeight:(float)newH;
 
 @end

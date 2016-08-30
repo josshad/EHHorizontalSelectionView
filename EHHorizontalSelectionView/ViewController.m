@@ -11,8 +11,6 @@
 #import "EHRoundedHorizontalViewCell.h"
 #import "UIColor+UIColorAdditions.h"
 #import "UIImage+UIImageAdditions.h"
-#import "CustomLineCellCode.h"
-#import "CustomizedCollectionViewCell.h"
 
 @interface ViewController () <EHHorizontalSelectionViewProtocol>
 
@@ -33,18 +31,20 @@
     _hSelView1.delegate = self;
     _hSelView2.delegate = self;
     _hSelView3.delegate = self;
-    _hSelView4.delegate = self;
-    _hSelView5.delegate = self;
+    
     
     //set cell classes
     [_hSelView2 registerCellWithClass:[EHHorizontalLineViewCell class]];
     [_hSelView3 registerCellWithClass:[EHRoundedHorizontalViewCell class]];
     
-    
+    [EHHorizontalLineViewCell updateTintColor:[UIColor colorWithHex:0x00c264]];
+    [EHHorizontalLineViewCell updateColorHeight:2];
+    [EHRoundedHorizontalViewCell updateTintColor:[UIColor colorWithHex:0xffb647]];
     //set custom cell classes
-    [_hSelView4 registerCellWithClass:[CustomLineCellCode class]];
-    [_hSelView5 registerCellNib:[UINib nibWithNibName:@"CustomizedCollectionViewCell" bundle:nil] withClass:[CustomizedCollectionViewCell class]];
 }
+
+
+#pragma mark - EHHorizontalSelectionViewProtocol
 
 - (NSUInteger)numberOfItemsInHorizontalSelection:(EHHorizontalSelectionView*)hSelView
 {
@@ -80,6 +80,8 @@
     return @"";
 }
 
+
+#pragma mark - UI
 
 - (void)viewWillAppear:(BOOL)animated
 {

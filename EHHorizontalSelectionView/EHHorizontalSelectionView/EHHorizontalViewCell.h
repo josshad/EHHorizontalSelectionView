@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 static CGFloat _EHDefaultGap = 10;
+static NSMutableDictionary * _EHHorisontalSelectionStyles  = nil;
 
 @interface EHHorizontalViewCell : UICollectionViewCell
 
@@ -22,16 +23,28 @@ static CGFloat _EHDefaultGap = 10;
 
 //class methods
 
-+ (NSString * _Nonnull)reuseIdentifier;
-+ (UIFont * _Nonnull)currentFont;
-+ (UIFont * _Nonnull)currentFontMedium;
-
 + (BOOL)useDynamicSize;
++ (NSMutableDictionary * _Nonnull)styles;
 
-+ (float)currentGap;
++ (NSString * _Nonnull)reuseIdentifier;
++ (UIFont * _Nonnull)font;
++ (UIFont * _Nonnull)fontMedium;
++ (float)cellGap;
 + (BOOL)needCentred;
 
+
++ (void)updateTintColor:(UIColor * _Nonnull)color;
++ (void)updateFont:(UIFont * _Nonnull)font;
++ (void)updateFontMedium:(UIFont * _Nonnull)font;
++ (void)updateCellGap:(float)gap;
++ (void)updateNeedCentered:(BOOL)needCentered;
+
+
+
+
+
 //instance methods
+- (UIView * _Nullable)createSelectedView;
 - (void)highlight:(BOOL)highlighted;
 - (void)setSelectedCell:(BOOL)selected fromCellRect:(CGRect)rect;
 - (void)setTitleLabelText:(nullable NSString  *)text;

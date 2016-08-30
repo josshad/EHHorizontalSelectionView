@@ -11,13 +11,10 @@
 		835F0ADB1D75C1DD0011367A /* EHHorizontalLineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AD51D75C1DD0011367A /* EHHorizontalLineViewCell.m */; };
 		835F0ADC1D75C1DD0011367A /* EHHorizontalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AD81D75C1DD0011367A /* EHHorizontalViewCell.m */; };
 		835F0ADD1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0ADA1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m */; };
-		835F0AE71D75C21B0011367A /* CustomLineCellCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AE61D75C21B0011367A /* CustomLineCellCode.m */; };
 		835F0AEF1D75C26F0011367A /* CCARadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AEA1D75C26F0011367A /* CCARadialGradientLayer.m */; };
 		835F0AF01D75C26F0011367A /* UIColor+UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AEC1D75C26F0011367A /* UIColor+UIColorAdditions.m */; };
 		835F0AF11D75C26F0011367A /* UIImage+UIImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AEE1D75C26F0011367A /* UIImage+UIImageAdditions.m */; };
 		835F0AF31D75C4280011367A /* EHHorizontalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835F0AF21D75C4280011367A /* EHHorizontalViewCell.xib */; };
-		835F0AF81D75C5120011367A /* CustomizedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835F0AF61D75C5120011367A /* CustomizedCollectionViewCell.xib */; };
-		835F0AF91D75CA880011367A /* CustomizedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AF51D75C5120011367A /* CustomizedCollectionViewCell.m */; };
 		838428D91D7591CD00DC2AB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 838428D81D7591CD00DC2AB3 /* main.m */; };
 		838428DC1D7591CD00DC2AB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 838428DB1D7591CD00DC2AB3 /* AppDelegate.m */; };
 		838428DF1D7591CD00DC2AB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838428DE1D7591CD00DC2AB3 /* ViewController.m */; };
@@ -46,8 +43,6 @@
 		835F0AD81D75C1DD0011367A /* EHHorizontalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHHorizontalViewCell.m; path = EHHorizontalSelectionView/EHHorizontalViewCell.m; sourceTree = "<group>"; };
 		835F0AD91D75C1DD0011367A /* EHRoundedHorizontalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHRoundedHorizontalViewCell.h; path = EHHorizontalSelectionView/EHRoundedHorizontalViewCell.h; sourceTree = "<group>"; };
 		835F0ADA1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHRoundedHorizontalViewCell.m; path = EHHorizontalSelectionView/EHRoundedHorizontalViewCell.m; sourceTree = "<group>"; };
-		835F0AE51D75C21B0011367A /* CustomLineCellCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLineCellCode.h; sourceTree = "<group>"; };
-		835F0AE61D75C21B0011367A /* CustomLineCellCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLineCellCode.m; sourceTree = "<group>"; };
 		835F0AE91D75C26F0011367A /* CCARadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCARadialGradientLayer.h; sourceTree = "<group>"; };
 		835F0AEA1D75C26F0011367A /* CCARadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCARadialGradientLayer.m; sourceTree = "<group>"; };
 		835F0AEB1D75C26F0011367A /* UIColor+UIColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColorAdditions.h"; sourceTree = "<group>"; };
@@ -55,9 +50,6 @@
 		835F0AED1D75C26F0011367A /* UIImage+UIImageAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageAdditions.h"; sourceTree = "<group>"; };
 		835F0AEE1D75C26F0011367A /* UIImage+UIImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageAdditions.m"; sourceTree = "<group>"; };
 		835F0AF21D75C4280011367A /* EHHorizontalViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHHorizontalViewCell.xib; sourceTree = "<group>"; };
-		835F0AF41D75C5120011367A /* CustomizedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizedCollectionViewCell.h; sourceTree = "<group>"; };
-		835F0AF51D75C5120011367A /* CustomizedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizedCollectionViewCell.m; sourceTree = "<group>"; };
-		835F0AF61D75C5120011367A /* CustomizedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomizedCollectionViewCell.xib; sourceTree = "<group>"; };
 		838428D41D7591CD00DC2AB3 /* EHHorizontalSelectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EHHorizontalSelectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838428D81D7591CD00DC2AB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		838428DA1D7591CD00DC2AB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,11 +86,6 @@
 		835F0ACD1D75C14C0011367A /* Customizing */ = {
 			isa = PBXGroup;
 			children = (
-				835F0AE51D75C21B0011367A /* CustomLineCellCode.h */,
-				835F0AE61D75C21B0011367A /* CustomLineCellCode.m */,
-				835F0AF41D75C5120011367A /* CustomizedCollectionViewCell.h */,
-				835F0AF51D75C5120011367A /* CustomizedCollectionViewCell.m */,
-				835F0AF61D75C5120011367A /* CustomizedCollectionViewCell.xib */,
 			);
 			name = Customizing;
 			sourceTree = "<group>";
@@ -286,7 +273,6 @@
 				838428E71D7591CD00DC2AB3 /* LaunchScreen.storyboard in Resources */,
 				838428E41D7591CD00DC2AB3 /* Assets.xcassets in Resources */,
 				838428E21D7591CD00DC2AB3 /* Main.storyboard in Resources */,
-				835F0AF81D75C5120011367A /* CustomizedCollectionViewCell.xib in Resources */,
 				835F0AF31D75C4280011367A /* EHHorizontalViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,11 +298,9 @@
 				835F0AF01D75C26F0011367A /* UIColor+UIColorAdditions.m in Sources */,
 				835F0AD31D75C1D60011367A /* EHHorizontalSelectionView.m in Sources */,
 				838428DC1D7591CD00DC2AB3 /* AppDelegate.m in Sources */,
-				835F0AF91D75CA880011367A /* CustomizedCollectionViewCell.m in Sources */,
 				838428D91D7591CD00DC2AB3 /* main.m in Sources */,
 				835F0ADB1D75C1DD0011367A /* EHHorizontalLineViewCell.m in Sources */,
 				835F0ADD1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m in Sources */,
-				835F0AE71D75C21B0011367A /* CustomLineCellCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

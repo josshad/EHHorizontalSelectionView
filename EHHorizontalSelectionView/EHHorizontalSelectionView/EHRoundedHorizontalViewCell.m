@@ -12,29 +12,19 @@
 @implementation EHRoundedHorizontalViewCell
 
 - (void)awakeFromNib {
-    self.titleLabel.font = [EHRoundedHorizontalViewCell currentFont];
+    self.titleLabel.font = [EHRoundedHorizontalViewCell font];
     [super awakeFromNib];
     // Initialization code
 }
 
-+ (UIFont *)currentFont
++ (NSMutableDictionary *)styles
 {
-    return [UIFont fontWithName:@"HelveticaNeue-Light" size:15.0];
-}
-
-+ (UIFont *)currentFontMedium
-{
-    return [UIFont fontWithName:@"HelveticaNeue-Light" size:15.0];
-}
-
-+ (float)currentGap
-{
-    return 12 * 4;
-}
-
-+ (BOOL)needCentred
-{
-    return NO;
+    NSMutableDictionary * retDict = [super styles];
+    [retDict setObject:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0] forKey:@"fontMedium"];
+    [retDict setObject:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0] forKey:@"font"];
+    [retDict setObject:@(48) forKey:@"cellGap"];
+    [retDict setObject:@(NO) forKey:@"needCentred"];
+    return retDict;
 }
 
 - (void)setTitleLabelText:(NSString *)text

@@ -140,8 +140,8 @@
 
     if ([_class useDynamicSize])
     {
-        UIFont * font = [_class currentFont];
-        float gap = [_class currentGap];
+        UIFont * font = [_class font];
+        float gap = [_class cellGap];
         
         CGSize strSize = [name sizeWithAttributes:@{NSFontAttributeName : font}];
         
