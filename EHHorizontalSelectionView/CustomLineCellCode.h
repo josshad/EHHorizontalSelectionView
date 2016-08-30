@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  CustomLineCellCode.h
 //  EHHorizontalSelectionView
 //
 //  Created by Danila Gusev on 30/08/2016.
@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EHHorizontalLineViewCell.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface CustomLineCellCode : EHHorizontalLineViewCell
 
 @end
-

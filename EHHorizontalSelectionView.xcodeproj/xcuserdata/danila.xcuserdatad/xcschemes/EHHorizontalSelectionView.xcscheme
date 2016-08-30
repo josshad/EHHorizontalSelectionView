@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8384290F1D75A38B00DC2AB3"
+               BuildableName = "EHHorizontalSelectionViewTests.xctest"
+               BlueprintName = "EHHorizontalSelectionViewTests"
+               ReferencedContainer = "container:EHHorizontalSelectionView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
