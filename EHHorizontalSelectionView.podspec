@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EHHorizontalSelectionView'
-  s.version          = '0.9.1'
+  s.version          = '0.9.2'
   s.summary          = 'Horizontal table view style controller'
 
 # This description is used to generate tags and improve search results.
@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-This is extension for presenting horizontal lists of items (horizontal tableview)
+	This is extension for presenting horizontal lists of items (horizontal tableview)
                        DESC
 
   s.homepage         = 'https://github.com/josshad/EHHorizontalSelectionView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Josshad' => 'Josshad@gmail.com' }
+  s.author           = { 'Danila Gusev' => 'jos.shad@gmail.com' }
   s.source           = { :git => 'https://github.com/josshad/EHHorizontalSelectionView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
