@@ -16,36 +16,6 @@
 @end
 
 
-
-@implementation NSBundle (ios7Bundle)
-
-+ (instancetype)ios7Bundle{
-    NSBundle *mainBundle = [NSBundle mainBundle];
-    NSURL *bundleUrl = [mainBundle URLForResource:@"EHHorizontalSelectionView" withExtension:@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithURL:bundleUrl];
-    return bundle;
-}
-
-+ (UINib*)nibNamedPods:(NSString*)name{
-    UINib *image;
-    image = [UINib nibWithNibName:name bundle:nil];
-    if (image) {
-        return image;
-    }
-    
-    image = [UINib nibWithNibName:[NSString stringWithFormat:@"EHHorizontalSelectionView.bundle/%@",name] bundle:nil];
-    if (image) {
-        return image;
-    }
-    NSBundle * b = [NSBundle ios7Bundle];
-    NSData * data = [NSData dataWithContentsOfFile:[[b resourcePath] stringByAppendingPathComponent:name]];
-    image = [UINib nibWithData:data bundle:b];
-    
-    return image;
-}
-@end
-
-
 @implementation EHHorizontalSelectionView
 {
     UICollectionView * _collectionView;
@@ -116,6 +86,11 @@
     [self collectionView:_collectionView didSelectItemAtIndexPath:indexPath];
 }
 
+- (void)reloadData
+{
+    [_collectionView reloadData];
+}
+
 #pragma mark - private
 - (void)startView
 {
@@ -137,7 +112,7 @@
     [_collectionView setShowsVerticalScrollIndicator:NO];
     [_collectionView setAlwaysBounceHorizontal:YES];
     
-    [self registerCellNib:[NSBundle nibNamedPods:@"EHHorizontalViewCell"] withClass:[EHHorizontalViewCell class]];
+    [self registerCellNib:[UINib nibWithNibName:@"EHHorizontalViewCell"  bundle:[NSBundle bundleForClass:[EHHorizontalViewCell class]]] withClass:[EHHorizontalViewCell class]];
     
     [self addSubview:_collectionView];
     

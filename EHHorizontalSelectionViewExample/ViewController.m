@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "EHHorizontalLineViewCell.h"
-#import "EHRoundedHorizontalViewCell.h"
 #import "UIColor+UIColorAdditions.h"
 #import "UIImage+UIImageAdditions.h"
 

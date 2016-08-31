@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "EHHorizontalSelectionView.h"
 @interface EHHorizontalSelectionViewTests : XCTestCase
 
 @end
@@ -24,10 +24,53 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testCreation {
+    EHHorizontalSelectionView * sw = [EHHorizontalSelectionView new];
+    XCTAssertNotNil(sw);
+    [sw registerCellWithClass:[EHHorizontalLineViewCell class]];
 }
+
+- (void)testColor
+{
+    UIColor * color = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:arc4random()%255/255.0];
+    [EHHorizontalLineViewCell updateTintColor:color];
+    XCTAssertEqual(color, [EHHorizontalLineViewCell tintColor]);
+    [EHRoundedHorizontalViewCell updateTintColor:color];
+    XCTAssertEqual(color, [EHRoundedHorizontalViewCell tintColor]);
+}
+
+
+- (void)testFont
+{
+    UIFont * f = [UIFont systemFontOfSize:12];
+    [EHHorizontalLineViewCell updateFont:f];
+    XCTAssertEqual(f, [EHHorizontalLineViewCell font]);
+    [EHHorizontalLineViewCell updateFontMedium:f];
+    XCTAssertEqual(f, [EHHorizontalLineViewCell fontMedium]);
+    [EHRoundedHorizontalViewCell updateFont:f];
+    XCTAssertEqual(f, [EHRoundedHorizontalViewCell font]);
+    [EHRoundedHorizontalViewCell updateFontMedium:f];
+    XCTAssertEqual(f, [EHRoundedHorizontalViewCell fontMedium]);
+}
+
+
+- (void)testGap
+{
+    float f = 11.55;
+    [EHHorizontalLineViewCell updateCellGap:f];
+    XCTAssertEqual(f, [EHHorizontalLineViewCell cellGap]);
+    [EHRoundedHorizontalViewCell updateCellGap:f];
+    XCTAssertEqual(f, [EHRoundedHorizontalViewCell cellGap]);
+}
+
+
+- (void)testColorHeight
+{
+    float h = 1.55;
+    [EHHorizontalLineViewCell updateColorHeight:h];
+    XCTAssertEqual(h, [EHHorizontalLineViewCell colorHeight]);
+}
+
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

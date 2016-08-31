@@ -11,6 +11,7 @@
 
 @interface EHHorizontalLineViewCell : EHHorizontalViewCell
 
++ (float)colorHeight;
 + (void)updateColorHeight:(float)newH;
 
 @end
