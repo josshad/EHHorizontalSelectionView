@@ -2,12 +2,25 @@
 
 This is extension for presenting horisontal lists of items (horisontal tableview)
 
+<img src="https://josshad.github.io/EHHorizontalSelectionView/EHSelView.gif">
+
 ## Installation
 ### Manual
 Add files from EHHorizontalSelectionView/EHHorizontalSelectionView  to your project 
 
 ##Usage
 	#import <EHHorizontalSelectionView/EHHorizontalSelectionView.h>
+
+Default style of table is with EHHorizontalViewCell cells. To change default behaviour you need register another cell class or cell nib. Custom cell must subclassed from EHHorizontalViewCell.
+
+For example cell types with animated selection:
+
+	[_hSelView registerCellWithClass:[EHHorizontalLineViewCell class]];
+	[_hSelView1 registerCellWithClass:[EHRoundedHorizontalViewCell class]];
+	
+or your custom cell:
+
+	[_hSelView2 registerCellNib:[UINib nibWithNibName:@"MyCustomCellNib" bundle:nil] withClass:[EHHorizontalViewCell class]];
 
 ##Customization
 
