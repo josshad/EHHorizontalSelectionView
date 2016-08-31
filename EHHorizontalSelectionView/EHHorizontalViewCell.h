@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 static CGFloat _EHDefaultGap = 10;
-static NSMutableDictionary * _EHHorisontalSelectionStyles  = nil;
+static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 
 @interface EHHorizontalViewCell : UICollectionViewCell
 

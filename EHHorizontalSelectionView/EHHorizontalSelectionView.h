@@ -15,11 +15,11 @@
 
 @interface EHHorizontalSelectionView : UIView
 
-@property (nonatomic, weak) id<EHHorizontalSelectionViewProtocol> delegate;
+@property (nonatomic, weak) id<EHHorizontalSelectionViewProtocol> _Nullable delegate;
 
 - (void)selectIndex:(NSUInteger)index;
-- (void)registerCellWithClass:(Class)class;
-- (void)registerCellNib:(UINib *)nib withClass:(Class)class;
+- (void)registerCellWithClass:(Class _Nonnull)class;
+- (void)registerCellNib:(UINib * _Nonnull)nib withClass:(Class _Nonnull)class;
 - (NSUInteger)selectedIndex;
 
 @end
@@ -27,10 +27,10 @@
 @protocol EHHorizontalSelectionViewProtocol <NSObject>
 
 @required
-- (NSUInteger)numberOfItemsInHorizontalSelection:(EHHorizontalSelectionView*)hSelView;
-- (NSString *)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView*)hSelView;
+- (NSUInteger)numberOfItemsInHorizontalSelection:(EHHorizontalSelectionView* _Nonnull)hSelView;
+- (NSString * _Nullable)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView* _Nonnull)hSelView;
 
 @optional
-- (void)horizontalSelection:(EHHorizontalSelectionView *)hSelView didSelectObjectAtIndex:(NSUInteger)index;
+- (void)horizontalSelection:(EHHorizontalSelectionView * _Nonnull)hSelView didSelectObjectAtIndex:(NSUInteger)index;
 
 @end
