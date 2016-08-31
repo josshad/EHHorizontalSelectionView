@@ -26,8 +26,13 @@ Default style of table is with EHHorizontalViewCell cells. To change default beh
 For example cell types with animated selection:
 
 	[_hSelView registerCellWithClass:[EHHorizontalLineViewCell class]];
+	
+<img src="https://josshad.github.io/EHHorizontalSelectionView/EHLine.gif">
+	
 	[_hSelView1 registerCellWithClass:[EHRoundedHorizontalViewCell class]];
 	
+<img src="https://josshad.github.io/EHHorizontalSelectionView/EHRound.gif">
+
 or your custom cell:
 
 	[_hSelView2 registerCellNib:[UINib nibWithNibName:@"MyCustomCellNib" bundle:nil] withClass:[EHHorizontalViewCell class]];
