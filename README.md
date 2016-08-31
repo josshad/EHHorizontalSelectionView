@@ -54,7 +54,7 @@ Or you can subclass cell of that type and override method **+ (UIColor * _Nonnul
 ###Fonts
   
     [EHRoundedHorizontalViewCell updateFontMedium:[UIFont boldSystemFontOfSize:15]];
-    [EHRoundedHorizontalViewCell updateFontMedium:[UIFont systemFontOfSize:15]];
+    [EHRoundedHorizontalViewCell updateFont:[UIFont systemFontOfSize:15]];
     
 ###Gap wifth between cells
 
