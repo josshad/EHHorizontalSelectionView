@@ -6,7 +6,7 @@ This is extension for presenting horisontal lists of items (horisontal tableview
 
 ## Installation
 ### Manual
-Add files from EHHorizontalSelectionView/EHHorizontalSelectionView  to your project 
+Add files from EHHorizontalSelectionView  to your project 
 
 ##Usage
 	#import <EHHorizontalSelectionView/EHHorizontalSelectionView.h>
