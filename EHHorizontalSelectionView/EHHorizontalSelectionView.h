@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EHHorizontalViewCell.h"
+#import "EHHorizontalLineViewCell.h"
+#import "EHRoundedHorizontalViewCell.h"
 
 @protocol EHHorizontalSelectionViewProtocol;
 

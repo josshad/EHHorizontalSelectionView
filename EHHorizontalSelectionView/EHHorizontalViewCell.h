@@ -29,6 +29,7 @@ static NSMutableDictionary * _EHHorisontalSelectionStyles  = nil;
 + (NSString * _Nonnull)reuseIdentifier;
 + (UIFont * _Nonnull)font;
 + (UIFont * _Nonnull)fontMedium;
++ (UIColor * _Nonnull)tintColor;
 + (float)cellGap;
 + (BOOL)needCentred;
 

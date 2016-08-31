@@ -39,7 +39,11 @@
     
     [EHHorizontalLineViewCell updateTintColor:[UIColor colorWithHex:0x00c264]];
     [EHHorizontalLineViewCell updateColorHeight:2];
+    [EHHorizontalLineViewCell updateCellGap:20];
     [EHRoundedHorizontalViewCell updateTintColor:[UIColor colorWithHex:0xffb647]];
+    
+    [EHRoundedHorizontalViewCell updateFontMedium:[UIFont boldSystemFontOfSize:15]];
+    [EHRoundedHorizontalViewCell updateFontMedium:[UIFont systemFontOfSize:15]];
     //set custom cell classes
 }
 
@@ -89,4 +93,9 @@
     self.navigationController.navigationBarHidden = YES;
     [super viewWillAppear:animated];
 }
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 @end
