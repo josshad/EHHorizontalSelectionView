@@ -1,6 +1,6 @@
 # EHHorizontalSelectionView
 
-This is extension for presenting horisontal lists of items (horisontal tableview)
+This is extension for presenting horizontal lists of items (horizontal tableview)
 
 <img src="https://josshad.github.io/EHHorizontalSelectionView/EHSelView.gif">
 
