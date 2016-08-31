@@ -56,4 +56,4 @@ Danila Gusev
 
 ## License
 
-Usage is provided under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> License. See <a href="https://github.com/josshad/EHPlainAlert/blob/master/LICENSE">LICENSE</a> for full details.
+Usage is provided under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> License. See <a href="https://github.com/josshad/EHHorizontalSelectionView/blob/master/LICENSE">LICENSE</a> for full details.
