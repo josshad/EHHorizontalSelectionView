@@ -5,6 +5,16 @@ This is extension for presenting horizontal lists of items (horizontal tableview
 <img src="https://josshad.github.io/EHHorizontalSelectionView/EHSelView.gif">
 
 ## Installation
+### CocoaPods
+To install EHHorizontalSelectionView using CocoaPods, please integrate it in your existing Podfile, or create a new Podfile:
+
+```ruby
+target 'MyApp' do
+  pod 'EHHorizontalSelectionView'
+end
+```
+Then run `pod install`.
+
 ### Manual
 Add files from EHHorizontalSelectionView  to your project 
 
@@ -56,4 +66,4 @@ Danila Gusev
 
 ## License
 
-Usage is provided under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> License. See <a href="https://github.com/josshad/EHPlainAlert/blob/master/LICENSE">LICENSE</a> for full details.
+Usage is provided under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> License. See <a href="https://github.com/josshad/EHHorizontalSelectionView/blob/master/LICENSE">LICENSE</a> for full details.
