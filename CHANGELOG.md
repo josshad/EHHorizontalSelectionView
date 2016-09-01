@@ -1,3 +1,7 @@
+### Version 0.9.4
+* Fix shadow color issue
+
+
 ### Version 0.9.3
 * Fix example project structure
 

@@ -75,6 +75,7 @@
 - (void)setTintColor:(UIColor *)tintColor
 {
     self.coloredView.backgroundColor = tintColor;
+    self.coloredView.layer.shadowColor = tintColor.CGColor;
 }
 
 #pragma mark - class methods
