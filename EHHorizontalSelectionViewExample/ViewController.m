@@ -35,13 +35,23 @@
     [_hSelView2 registerCellWithClass:[EHHorizontalLineViewCell class]];
     [_hSelView3 registerCellWithClass:[EHRoundedHorizontalViewCell class]];
     
+    //Set line color for _hSelView2 selection view
     [_hSelView2 setTintColor:[UIColor colorWithHex:0xff46c7]];
+    
+    //Update color line height for EHHorizontalLineViewCell
+    [EHHorizontalLineViewCell updateColorHeight:2.f];
+    
+    //Update color for all EHRoundedHorizontalViewCell classes
     [EHRoundedHorizontalViewCell updateTintColor:[UIColor colorWithHex:0xffb647]];
     
+    //Update selected font for all EHRoundedHorizontalViewCell classes
     [EHRoundedHorizontalViewCell updateFontMedium:[UIFont boldSystemFontOfSize:15]];
+    
+    //Set font for _hSelView3 selection view
     [_hSelView3 setFont:[UIFont systemFontOfSize:18]];
+    
+    //Set cell additional inset
     [_hSelView3 setCellGap:15];
-    //set custom cell classes
 }
 
 
@@ -49,11 +59,11 @@
 
 - (NSUInteger)numberOfItemsInHorizontalSelection:(EHHorizontalSelectionView*)hSelView
 {
-    if (hSelView == _hSelView1 || _hSelView5 == hSelView)
+    if (hSelView == _hSelView1)
     {
         return [_arr1 count];
     }
-    else if (hSelView == _hSelView2 || _hSelView4 == hSelView)
+    else if (hSelView == _hSelView2)
     {
         return [_arr2 count];
     }
@@ -66,11 +76,11 @@
 
 - (NSString *)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView*)hSelView
 {
-    if (hSelView == _hSelView1 || _hSelView5 == hSelView)
+    if (hSelView == _hSelView1 )
     {
         return [_arr1 objectAtIndex:index];
     }
-    else if (hSelView == _hSelView2 || _hSelView4 == hSelView)
+    else if (hSelView == _hSelView2)
     {
         return [[_arr2 objectAtIndex:index] uppercaseString];
     }
