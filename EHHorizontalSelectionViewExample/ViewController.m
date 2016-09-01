@@ -39,7 +39,7 @@
     [EHRoundedHorizontalViewCell updateTintColor:[UIColor colorWithHex:0xffb647]];
     
     [EHRoundedHorizontalViewCell updateFontMedium:[UIFont boldSystemFontOfSize:15]];
-    [EHRoundedHorizontalViewCell updateFont:[UIFont systemFontOfSize:15]];
+    [_hSelView3 setFont:[UIFont systemFontOfSize:18]];
     [_hSelView3 setCellGap:15];
     //set custom cell classes
 }

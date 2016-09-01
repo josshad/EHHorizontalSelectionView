@@ -1,4 +1,7 @@
 ### Version 0.9.3
+* Fix example project structure
+
+### Version 0.9.3
 * Customization for chosen selection view
 * Documentation
 
