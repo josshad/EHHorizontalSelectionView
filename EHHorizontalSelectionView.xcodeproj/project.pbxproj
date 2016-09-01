@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		835F0AD31D75C1D60011367A /* EHHorizontalSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AD21D75C1D60011367A /* EHHorizontalSelectionView.m */; };
-		835F0ADB1D75C1DD0011367A /* EHHorizontalLineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AD51D75C1DD0011367A /* EHHorizontalLineViewCell.m */; };
-		835F0ADC1D75C1DD0011367A /* EHHorizontalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AD81D75C1DD0011367A /* EHHorizontalViewCell.m */; };
-		835F0ADD1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0ADA1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m */; };
 		835F0AEF1D75C26F0011367A /* CCARadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AEA1D75C26F0011367A /* CCARadialGradientLayer.m */; };
 		835F0AF01D75C26F0011367A /* UIColor+UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AEC1D75C26F0011367A /* UIColor+UIColorAdditions.m */; };
 		835F0AF11D75C26F0011367A /* UIImage+UIImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0AEE1D75C26F0011367A /* UIImage+UIImageAdditions.m */; };
-		835F0AF31D75C4280011367A /* EHHorizontalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835F0AF21D75C4280011367A /* EHHorizontalViewCell.xib */; };
+		835F0B2E1D7839D80011367A /* EHHorizontalLineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0B251D7839D80011367A /* EHHorizontalLineViewCell.m */; };
+		835F0B2F1D7839D80011367A /* EHHorizontalSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0B271D7839D80011367A /* EHHorizontalSelectionView.m */; };
+		835F0B301D7839D80011367A /* EHHorizontalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0B291D7839D80011367A /* EHHorizontalViewCell.m */; };
+		835F0B311D7839D80011367A /* EHRoundedHorizontalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F0B2B1D7839D80011367A /* EHRoundedHorizontalViewCell.m */; };
+		835F0B321D7839D80011367A /* EHHorizontalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835F0B2D1D7839D80011367A /* EHHorizontalViewCell.xib */; };
 		838428D91D7591CD00DC2AB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 838428D81D7591CD00DC2AB3 /* main.m */; };
 		838428DC1D7591CD00DC2AB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 838428DB1D7591CD00DC2AB3 /* AppDelegate.m */; };
 		838428DF1D7591CD00DC2AB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838428DE1D7591CD00DC2AB3 /* ViewController.m */; };
@@ -35,21 +35,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		835F0AD11D75C1D60011367A /* EHHorizontalSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHHorizontalSelectionView.h; path = EHHorizontalSelectionView/EHHorizontalSelectionView.h; sourceTree = "<group>"; };
-		835F0AD21D75C1D60011367A /* EHHorizontalSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHHorizontalSelectionView.m; path = EHHorizontalSelectionView/EHHorizontalSelectionView.m; sourceTree = "<group>"; };
-		835F0AD41D75C1DD0011367A /* EHHorizontalLineViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHHorizontalLineViewCell.h; path = EHHorizontalSelectionView/EHHorizontalLineViewCell.h; sourceTree = "<group>"; };
-		835F0AD51D75C1DD0011367A /* EHHorizontalLineViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHHorizontalLineViewCell.m; path = EHHorizontalSelectionView/EHHorizontalLineViewCell.m; sourceTree = "<group>"; };
-		835F0AD71D75C1DD0011367A /* EHHorizontalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHHorizontalViewCell.h; path = EHHorizontalSelectionView/EHHorizontalViewCell.h; sourceTree = "<group>"; };
-		835F0AD81D75C1DD0011367A /* EHHorizontalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHHorizontalViewCell.m; path = EHHorizontalSelectionView/EHHorizontalViewCell.m; sourceTree = "<group>"; };
-		835F0AD91D75C1DD0011367A /* EHRoundedHorizontalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHRoundedHorizontalViewCell.h; path = EHHorizontalSelectionView/EHRoundedHorizontalViewCell.h; sourceTree = "<group>"; };
-		835F0ADA1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHRoundedHorizontalViewCell.m; path = EHHorizontalSelectionView/EHRoundedHorizontalViewCell.m; sourceTree = "<group>"; };
 		835F0AE91D75C26F0011367A /* CCARadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCARadialGradientLayer.h; sourceTree = "<group>"; };
 		835F0AEA1D75C26F0011367A /* CCARadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCARadialGradientLayer.m; sourceTree = "<group>"; };
 		835F0AEB1D75C26F0011367A /* UIColor+UIColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColorAdditions.h"; sourceTree = "<group>"; };
 		835F0AEC1D75C26F0011367A /* UIColor+UIColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColorAdditions.m"; sourceTree = "<group>"; };
 		835F0AED1D75C26F0011367A /* UIImage+UIImageAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageAdditions.h"; sourceTree = "<group>"; };
 		835F0AEE1D75C26F0011367A /* UIImage+UIImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageAdditions.m"; sourceTree = "<group>"; };
-		835F0AF21D75C4280011367A /* EHHorizontalViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHHorizontalViewCell.xib; sourceTree = "<group>"; };
+		835F0B241D7839D80011367A /* EHHorizontalLineViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHHorizontalLineViewCell.h; sourceTree = "<group>"; };
+		835F0B251D7839D80011367A /* EHHorizontalLineViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHHorizontalLineViewCell.m; sourceTree = "<group>"; };
+		835F0B261D7839D80011367A /* EHHorizontalSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHHorizontalSelectionView.h; sourceTree = "<group>"; };
+		835F0B271D7839D80011367A /* EHHorizontalSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHHorizontalSelectionView.m; sourceTree = "<group>"; };
+		835F0B281D7839D80011367A /* EHHorizontalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHHorizontalViewCell.h; sourceTree = "<group>"; };
+		835F0B291D7839D80011367A /* EHHorizontalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHHorizontalViewCell.m; sourceTree = "<group>"; };
+		835F0B2A1D7839D80011367A /* EHRoundedHorizontalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHRoundedHorizontalViewCell.h; sourceTree = "<group>"; };
+		835F0B2B1D7839D80011367A /* EHRoundedHorizontalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHRoundedHorizontalViewCell.m; sourceTree = "<group>"; };
+		835F0B2D1D7839D80011367A /* EHHorizontalViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHHorizontalViewCell.xib; sourceTree = "<group>"; };
 		838428D41D7591CD00DC2AB3 /* EHHorizontalSelectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EHHorizontalSelectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838428D81D7591CD00DC2AB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		838428DA1D7591CD00DC2AB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,15 +90,6 @@
 			name = Customizing;
 			sourceTree = "<group>";
 		};
-		835F0ADE1D75C1F00011367A /* xibs */ = {
-			isa = PBXGroup;
-			children = (
-				835F0AF21D75C4280011367A /* EHHorizontalViewCell.xib */,
-			);
-			name = xibs;
-			path = EHHorizontalSelectionView/xibs;
-			sourceTree = "<group>";
-		};
 		835F0AE81D75C26F0011367A /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +103,32 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		835F0B2C1D7839D80011367A /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				835F0B2D1D7839D80011367A /* EHHorizontalViewCell.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
+		835F0B331D7839E00011367A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				835F0B241D7839D80011367A /* EHHorizontalLineViewCell.h */,
+				835F0B251D7839D80011367A /* EHHorizontalLineViewCell.m */,
+				835F0B281D7839D80011367A /* EHHorizontalViewCell.h */,
+				835F0B291D7839D80011367A /* EHHorizontalViewCell.m */,
+				835F0B2A1D7839D80011367A /* EHRoundedHorizontalViewCell.h */,
+				835F0B2B1D7839D80011367A /* EHRoundedHorizontalViewCell.m */,
+				835F0B2C1D7839D80011367A /* xibs */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		838428CB1D7591CD00DC2AB3 = {
 			isa = PBXGroup;
 			children = (
-				838428D61D7591CD00DC2AB3 /* EHHorizontalSelectionView */,
+				838428D61D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample */,
 				838429111D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests */,
 				838428D51D7591CD00DC2AB3 /* Products */,
 			);
@@ -130,11 +143,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		838428D61D7591CD00DC2AB3 /* EHHorizontalSelectionView */ = {
+		838428D61D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample */ = {
 			isa = PBXGroup;
 			children = (
 				835F0AE81D75C26F0011367A /* Common */,
-				838428F71D7591F500DC2AB3 /* Views */,
+				838428F71D7591F500DC2AB3 /* EHHorizontalSelectionView */,
 				838428DA1D7591CD00DC2AB3 /* AppDelegate.h */,
 				838428DB1D7591CD00DC2AB3 /* AppDelegate.m */,
 				838428DD1D7591CD00DC2AB3 /* ViewController.h */,
@@ -146,7 +159,7 @@
 				838428D71D7591CD00DC2AB3 /* Supporting Files */,
 				835F0ACD1D75C14C0011367A /* Customizing */,
 			);
-			path = EHHorizontalSelectionView;
+			path = EHHorizontalSelectionViewExample;
 			sourceTree = "<group>";
 		};
 		838428D71D7591CD00DC2AB3 /* Supporting Files */ = {
@@ -157,28 +170,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		838428F71D7591F500DC2AB3 /* Views */ = {
+		838428F71D7591F500DC2AB3 /* EHHorizontalSelectionView */ = {
 			isa = PBXGroup;
 			children = (
-				835F0AD11D75C1D60011367A /* EHHorizontalSelectionView.h */,
-				835F0AD21D75C1D60011367A /* EHHorizontalSelectionView.m */,
-				838429011D759ECB00DC2AB3 /* Cells */,
+				835F0B261D7839D80011367A /* EHHorizontalSelectionView.h */,
+				835F0B271D7839D80011367A /* EHHorizontalSelectionView.m */,
+				835F0B331D7839E00011367A /* Cells */,
 			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		838429011D759ECB00DC2AB3 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				835F0ADE1D75C1F00011367A /* xibs */,
-				835F0AD71D75C1DD0011367A /* EHHorizontalViewCell.h */,
-				835F0AD81D75C1DD0011367A /* EHHorizontalViewCell.m */,
-				835F0AD41D75C1DD0011367A /* EHHorizontalLineViewCell.h */,
-				835F0AD51D75C1DD0011367A /* EHHorizontalLineViewCell.m */,
-				835F0AD91D75C1DD0011367A /* EHRoundedHorizontalViewCell.h */,
-				835F0ADA1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m */,
-			);
-			name = Cells;
+			name = EHHorizontalSelectionView;
+			path = ../EHHorizontalSelectionView;
 			sourceTree = "<group>";
 		};
 		838429111D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests */ = {
@@ -273,7 +273,7 @@
 				838428E71D7591CD00DC2AB3 /* LaunchScreen.storyboard in Resources */,
 				838428E41D7591CD00DC2AB3 /* Assets.xcassets in Resources */,
 				838428E21D7591CD00DC2AB3 /* Main.storyboard in Resources */,
-				835F0AF31D75C4280011367A /* EHHorizontalViewCell.xib in Resources */,
+				835F0B321D7839D80011367A /* EHHorizontalViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,13 +294,13 @@
 				835F0AEF1D75C26F0011367A /* CCARadialGradientLayer.m in Sources */,
 				838428DF1D7591CD00DC2AB3 /* ViewController.m in Sources */,
 				835F0AF11D75C26F0011367A /* UIImage+UIImageAdditions.m in Sources */,
-				835F0ADC1D75C1DD0011367A /* EHHorizontalViewCell.m in Sources */,
+				835F0B301D7839D80011367A /* EHHorizontalViewCell.m in Sources */,
 				835F0AF01D75C26F0011367A /* UIColor+UIColorAdditions.m in Sources */,
-				835F0AD31D75C1D60011367A /* EHHorizontalSelectionView.m in Sources */,
 				838428DC1D7591CD00DC2AB3 /* AppDelegate.m in Sources */,
 				838428D91D7591CD00DC2AB3 /* main.m in Sources */,
-				835F0ADB1D75C1DD0011367A /* EHHorizontalLineViewCell.m in Sources */,
-				835F0ADD1D75C1DD0011367A /* EHRoundedHorizontalViewCell.m in Sources */,
+				835F0B2F1D7839D80011367A /* EHHorizontalSelectionView.m in Sources */,
+				835F0B2E1D7839D80011367A /* EHHorizontalLineViewCell.m in Sources */,
+				835F0B311D7839D80011367A /* EHRoundedHorizontalViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
