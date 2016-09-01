@@ -21,6 +21,10 @@ Add files from EHHorizontalSelectionView  to your project
 ##Usage
 	#import <EHHorizontalSelectionView/EHHorizontalSelectionView.h>
 
+You can use EHHorizontalSelectionView as outlet in your xib or storyboard
+
+	@property (nonatomic, weak) IBOutlet EHHorizontalSelectionView * hSelView;
+
 Default style of table is with EHHorizontalViewCell cells. To change default behaviour you need register another cell class or cell nib. Custom cell must subclassed from EHHorizontalViewCell.
 
 For example cell types with animated selection:
