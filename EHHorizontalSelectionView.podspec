@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EHHorizontalSelectionView'
-  s.version          = '0.9.2'
+  s.version          = '0.9.3'
   s.summary          = 'Horizontal table view style controller'
 
 # This description is used to generate tags and improve search results.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 	This is extension for presenting horizontal lists of items (horizontal tableview)
                        DESC
 
-  s.homepage         = 'https://github.com/josshad/EHHorizontalSelectionView'
+  s.homepage         = 'https://github.com/josshad/EHHorizontalSelectionView/'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Danila Gusev' => 'jos.shad@gmail.com' }

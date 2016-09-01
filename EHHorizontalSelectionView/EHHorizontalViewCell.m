@@ -67,6 +67,18 @@
     return self;
 }
 
+- (void)setFont:(UIFont *)font
+{
+    self.titleLabel.font = font;
+}
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    self.coloredView.backgroundColor = tintColor;
+}
+
+#pragma mark - class methods
+
 + (void)loadStyles
 {
     @synchronized (_EHHorisontalSelectionStyles) {

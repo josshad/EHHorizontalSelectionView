@@ -44,22 +44,39 @@ You can change default tint color for cell of selected type
 
     [EHHorizontalLineViewCell updateTintColor:[UIColor colorWithHex:0x00c264]];
   
-Or you can subclass cell of that type and override method **+ (UIColor * _Nonnull)tintColor;**
+You can subclass cell of that type and override method **+ (UIColor * _Nonnull)tintColor;**
 
     + (UIColor *)tintColor
     {
       return [UIColor redColor];
     }
 
+Or you can change tint color for chosen selection view
+
+        [_hSelView2 setTintColor:[UIColor colorWithHex:0xff46c7]];
+
 ###Fonts
   
+Change default appearance
+
     [EHRoundedHorizontalViewCell updateFontMedium:[UIFont boldSystemFontOfSize:15]];
     [EHRoundedHorizontalViewCell updateFont:[UIFont systemFontOfSize:15]];
+
+Change for chosen selectionView
+
+    [_hSelView3 setFont:[UIFont systemFontOfSize:17]];
     
-###Gap wifth between cells
+###Additional width for cell (inset)
+
+Change default appearance
 
     [EHHorizontalLineViewCell updateCellGap:20];
-    
+
+Change for chosen selectionView
+
+    [_hSelView3 setCellGap:15.f];    
+
+   
 ###Line height (for EHHorizontalLineViewCell)
 
     [EHHorizontalLineViewCell updateColorHeight:2];

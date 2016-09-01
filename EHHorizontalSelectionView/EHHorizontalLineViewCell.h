@@ -11,7 +11,14 @@
 
 @interface EHHorizontalLineViewCell : EHHorizontalViewCell
 
+/*!
+ * @brief default height of selection line for EHHorizontalLineViewCell cells
+ */
 + (float)colorHeight;
+
+/*!
+ * @brief change default height
+ */
 + (void)updateColorHeight:(float)newH;
 
 @end

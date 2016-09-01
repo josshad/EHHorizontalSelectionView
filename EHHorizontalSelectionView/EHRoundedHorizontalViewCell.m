@@ -29,7 +29,7 @@
 
 - (void)setTitleLabelText:(NSString *)text
 {
-    self.titleLabel.text = [text uppercaseString];
+    self.titleLabel.text = text;
 }
 
 

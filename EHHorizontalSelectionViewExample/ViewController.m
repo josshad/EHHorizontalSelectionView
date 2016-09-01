@@ -35,13 +35,12 @@
     [_hSelView2 registerCellWithClass:[EHHorizontalLineViewCell class]];
     [_hSelView3 registerCellWithClass:[EHRoundedHorizontalViewCell class]];
     
-    [EHHorizontalLineViewCell updateTintColor:[UIColor colorWithHex:0x00c264]];
-    [EHHorizontalLineViewCell updateColorHeight:2];
-    [EHHorizontalLineViewCell updateCellGap:20];
+    [_hSelView2 setTintColor:[UIColor colorWithHex:0xff46c7]];
     [EHRoundedHorizontalViewCell updateTintColor:[UIColor colorWithHex:0xffb647]];
     
     [EHRoundedHorizontalViewCell updateFontMedium:[UIFont boldSystemFontOfSize:15]];
-    [EHRoundedHorizontalViewCell updateFontMedium:[UIFont systemFontOfSize:15]];
+    [EHRoundedHorizontalViewCell updateFont:[UIFont systemFontOfSize:15]];
+    [_hSelView3 setCellGap:15];
     //set custom cell classes
 }
 

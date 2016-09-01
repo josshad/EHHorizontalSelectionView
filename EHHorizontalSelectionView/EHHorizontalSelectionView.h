@@ -23,6 +23,26 @@
 
 
 /*!
+ * @brief tint color of cells. If not setted value will take from cell class method +tintColor
+ */
+@property (nonatomic, strong) UIColor * _Nullable tintColor;
+
+/*!
+ * @brief font of cells. If not setted value will take from cell class method +font
+ */
+@property (nonatomic, strong) UIFont * _Nullable font;
+
+/*!
+ * @brief selected font of cells. If not setted value will take from cell class method +fontMedium
+ */
+@property (nonatomic, strong) UIFont * _Nullable fontMedium;
+
+/*!
+ * @brief cell additional width. If not setted value will take from cell class method +cellGap
+ */
+@property (nonatomic, assign) float cellGap;
+
+/*!
  * @brief select element of selection view
  *
  * @param index Index to select
@@ -54,6 +74,8 @@
  * @brief returns selection view data
  */
 - (void)reloadData;
+
+
 
 @end
 

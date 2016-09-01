@@ -94,6 +94,10 @@
 #pragma mark - private
 - (void)startView
 {
+    _cellGap = NSIntegerMin;
+    _fontMedium = nil;
+    _font = nil;
+    _tintColor = nil;
     _selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     _flowLayout  = [[UICollectionViewFlowLayout alloc] init];
     [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -145,8 +149,29 @@
 
     if ([_class useDynamicSize])
     {
-        UIFont * font = [_class font];
-        float gap = [_class cellGap];
+        
+        UIFont * font;
+        
+        if (!_font)
+        {
+            font = [_class font];
+        }
+        else
+        {
+            font = _font;
+        }
+        
+        
+        float gap;
+        if (_cellGap == NSIntegerMin)
+        {
+            gap = [_class cellGap];
+        }
+        else
+        {
+            gap = _cellGap;
+        }
+        
         
         CGSize strSize = [name sizeWithAttributes:@{NSFontAttributeName : font}];
         
@@ -167,6 +192,7 @@
     {
         needCentred = [_class needCentred];
     }
+    
     if (needCentred)
     {
         float width = 0;
@@ -188,6 +214,21 @@
     
     [cell setTitleLabelText:[_delegate titleForItemAtIndex:indexPath.row forHorisontalSelection:self]];
 
+    if (_tintColor)
+    {
+        [cell setTintColor:_tintColor];
+    }
+    
+    if (_font)
+    {
+        [cell setFont:_font];
+    }
+    
+    if (_fontMedium)
+    {
+        [cell setFontMedium:_fontMedium];
+    }
+    
     cell.selectedCell = NO;
     if (_selectedIndexPath.row == indexPath.row)
     {

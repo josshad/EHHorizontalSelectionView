@@ -1,3 +1,7 @@
+### Version 0.9.3
+* Customization for chosen selection view
+* Documentation
+
 ### Version 0.9.1
 * Added pods
 
