@@ -50,7 +50,7 @@
 		835F0B2A1D7839D80011367A /* EHRoundedHorizontalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHRoundedHorizontalViewCell.h; sourceTree = "<group>"; };
 		835F0B2B1D7839D80011367A /* EHRoundedHorizontalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHRoundedHorizontalViewCell.m; sourceTree = "<group>"; };
 		835F0B2D1D7839D80011367A /* EHHorizontalViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHHorizontalViewCell.xib; sourceTree = "<group>"; };
-		838428D41D7591CD00DC2AB3 /* EHHorizontalSelectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EHHorizontalSelectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		838428D41D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EHHorizontalSelectionViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838428D81D7591CD00DC2AB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		838428DA1D7591CD00DC2AB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		838428DB1D7591CD00DC2AB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		838428D51D7591CD00DC2AB3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				838428D41D7591CD00DC2AB3 /* EHHorizontalSelectionView.app */,
+				838428D41D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample.app */,
 				838429101D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests.xctest */,
 			);
 			name = Products;
@@ -193,9 +193,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		838428D31D7591CD00DC2AB3 /* EHHorizontalSelectionView */ = {
+		838428D31D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 838428EB1D7591CD00DC2AB3 /* Build configuration list for PBXNativeTarget "EHHorizontalSelectionView" */;
+			buildConfigurationList = 838428EB1D7591CD00DC2AB3 /* Build configuration list for PBXNativeTarget "EHHorizontalSelectionViewExample" */;
 			buildPhases = (
 				838428D01D7591CD00DC2AB3 /* Sources */,
 				838428D11D7591CD00DC2AB3 /* Frameworks */,
@@ -205,9 +205,9 @@
 			);
 			dependencies = (
 			);
-			name = EHHorizontalSelectionView;
+			name = EHHorizontalSelectionViewExample;
 			productName = EHHorizontalSelectionView;
-			productReference = 838428D41D7591CD00DC2AB3 /* EHHorizontalSelectionView.app */;
+			productReference = 838428D41D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8384290F1D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests */ = {
@@ -259,7 +259,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				838428D31D7591CD00DC2AB3 /* EHHorizontalSelectionView */,
+				838428D31D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample */,
 				8384290F1D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests */,
 			);
 		};
@@ -317,7 +317,7 @@
 /* Begin PBXTargetDependency section */
 		838429161D75A38B00DC2AB3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 838428D31D7591CD00DC2AB3 /* EHHorizontalSelectionView */;
+			target = 838428D31D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample */;
 			targetProxy = 838429151D75A38B00DC2AB3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -430,7 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = EHHorizontalSelectionView/Info.plist;
+				INFOPLIST_FILE = EHHorizontalSelectionViewExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.josshad.EHHorizontalSelectionView;
@@ -442,7 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = EHHorizontalSelectionView/Info.plist;
+				INFOPLIST_FILE = EHHorizontalSelectionViewExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.josshad.EHHorizontalSelectionView;
@@ -486,7 +486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		838428EB1D7591CD00DC2AB3 /* Build configuration list for PBXNativeTarget "EHHorizontalSelectionView" */ = {
+		838428EB1D7591CD00DC2AB3 /* Build configuration list for PBXNativeTarget "EHHorizontalSelectionViewExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				838428EC1D7591CD00DC2AB3 /* Debug */,
