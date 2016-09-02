@@ -54,9 +54,21 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 
 //class methods
 
+
+/*!
+ * @brief adjust cell size with title label font. Default YES. 
+ */
 + (BOOL)useDynamicSize;
+
+/*!
+ * @brief styles dictionary of current cell class
+ */
 + (NSMutableDictionary * _Nonnull)styles;
 
+
+/*!
+ * @brief reuseIdentifier string for cell class. Default is class name.
+ */
 + (NSString * _Nonnull)reuseIdentifier;
 
 
@@ -82,7 +94,7 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 + (float)cellGap;
 
 /*!
- * @brief
+ * @brief need center cells if sums of their width < screen size
  */
 + (BOOL)needCentred;
 
@@ -110,7 +122,7 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 + (void)updateCellGap:(float)gap;
 
 /*!
- * @brief change
+ * @brief change cells centering
  */
 + (void)updateNeedCentered:(BOOL)needCentered;
 

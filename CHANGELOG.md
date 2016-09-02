@@ -1,3 +1,6 @@
+### Version 1.0.0
+* updated documentation
+
 ### Version 0.9.4
 * Fix shadow color issue
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EHHorizontalSelectionView'
-  s.version          = '0.9.5'
+  s.version          = '1.0.0'
   s.summary          = 'Horizontal table view style controller'
 
 # This description is used to generate tags and improve search results.
