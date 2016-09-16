@@ -14,6 +14,6 @@
 @property (nonatomic, weak) IBOutlet EHHorizontalSelectionView * hSelView1;
 @property (nonatomic, weak) IBOutlet EHHorizontalSelectionView * hSelView2;
 @property (nonatomic, weak) IBOutlet EHHorizontalSelectionView * hSelView3;
-
+@property (nonatomic, strong) EHHorizontalSelectionView * hSelView4;
 @end
 

@@ -1,3 +1,6 @@
+## Version 1.0.1
+* fix issues
+
 ### Version 1.0.0
 * updated documentation
 

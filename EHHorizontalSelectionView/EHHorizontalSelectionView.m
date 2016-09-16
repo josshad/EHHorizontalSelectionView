@@ -13,12 +13,14 @@
 
 @interface EHHorizontalSelectionView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic, strong) UICollectionView * collectionView;
+
 @end
 
 
 @implementation EHHorizontalSelectionView
 {
-    UICollectionView * _collectionView;
+
     UICollectionViewFlowLayout * _flowLayout;
     NSIndexPath * _selectedIndexPath;
     CGRect _lastCellRect;
@@ -28,15 +30,6 @@
 }
 
 #pragma mark - initializers
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        [self startView];
-    }
-    return self;
-}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -94,37 +87,39 @@
 #pragma mark - private
 - (void)startView
 {
-    _cellGap = NSIntegerMin;
-    _fontMedium = nil;
-    _font = nil;
-    _tintColor = nil;
-    _selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    _flowLayout  = [[UICollectionViewFlowLayout alloc] init];
-    [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    _flowLayout.minimumInteritemSpacing = 4.0f;
-    
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectNull collectionViewLayout:_flowLayout];
-    _collectionView.delegate = self;
-    _collectionView.dataSource = self;
-    _collectionView.bounces = YES;
-    _collectionView.clipsToBounds = NO;
-    self.clipsToBounds = NO;
-    _collectionView.backgroundColor = [UIColor clearColor];
-    
-    [_collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [_collectionView setShowsHorizontalScrollIndicator:NO];
-    [_collectionView setShowsVerticalScrollIndicator:NO];
-    [_collectionView setAlwaysBounceHorizontal:YES];
-    
-    [self registerCellNib:[UINib nibWithNibName:@"EHHorizontalViewCell"  bundle:[NSBundle bundleForClass:[EHHorizontalViewCell class]]] withClass:[EHHorizontalViewCell class]];
-    
-    [self addSubview:_collectionView];
-    
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
-    
-    [_collectionView reloadData];
-    
+    if (!_collectionView)
+    {
+        _cellGap = NSIntegerMin;
+        _fontMedium = nil;
+        _font = nil;
+        _tintColor = nil;
+        _selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        _flowLayout  = [[UICollectionViewFlowLayout alloc] init];
+        [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+        _flowLayout.minimumInteritemSpacing = 4.0f;
+        
+        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectNull collectionViewLayout:_flowLayout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.bounces = YES;
+        _collectionView.clipsToBounds = NO;
+        self.clipsToBounds = NO;
+        _collectionView.backgroundColor = [UIColor clearColor];
+        
+        [_collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_collectionView setShowsHorizontalScrollIndicator:NO];
+        [_collectionView setShowsVerticalScrollIndicator:NO];
+        [_collectionView setAlwaysBounceHorizontal:YES];
+        
+        [self registerCellNib:[UINib nibWithNibName:@"EHHorizontalViewCell"  bundle:[NSBundle bundleForClass:[EHHorizontalViewCell class]]] withClass:[EHHorizontalViewCell class]];
+        
+        [self addSubview:_collectionView];
+        
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_collectionView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_collectionView)]];
+        
+        [_collectionView reloadData];
+    }
 }
 
 #pragma mark - Collecton view methods
