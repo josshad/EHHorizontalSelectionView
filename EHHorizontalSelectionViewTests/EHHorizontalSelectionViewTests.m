@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "EHHorizontalSelectionView.h"
+
 @interface EHHorizontalSelectionViewTests : XCTestCase
 
 @end
