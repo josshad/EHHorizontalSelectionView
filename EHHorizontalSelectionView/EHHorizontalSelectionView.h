@@ -43,6 +43,11 @@
 @property (nonatomic, assign) float cellGap;
 
 /*!
+ * @brief need center cells if sums of their width < screen size. If not setted value will take from cell class method +needCentered
+ */
+@property (nonatomic, assign) NSInteger needCentered;
+
+/*!
  * @brief select element of selection view
  *
  * @param index Index to select

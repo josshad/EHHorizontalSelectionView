@@ -101,7 +101,7 @@
               @"font" : [UIFont fontWithName:@"HelveticaNeue" size:18.0],
               @"fontMedium" : [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0],
               @"cellGap" : @(_EHDefaultGap * 4),
-              @"needCentred" : @(YES)
+              @"needCentered" : @(YES)
               } mutableCopy];
 }
 
@@ -188,11 +188,11 @@
     return [[[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"cellGap"] floatValue];
 }
 
-+ (BOOL)needCentred
++ (BOOL)needCentered
 {
     [[self class] checkStyles];
     
-    return [[[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"needCentred"] boolValue];
+    return [[[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"needCentered"] boolValue];
 }
 
 

@@ -23,7 +23,7 @@
     [retDict setObject:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0] forKey:@"fontMedium"];
     [retDict setObject:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0] forKey:@"font"];
     [retDict setObject:@(48) forKey:@"cellGap"];
-    [retDict setObject:@(NO) forKey:@"needCentred"];
+    [retDict setObject:@(NO) forKey:@"needCentered"];
     return retDict;
 }
 

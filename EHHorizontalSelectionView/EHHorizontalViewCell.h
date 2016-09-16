@@ -96,7 +96,7 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 /*!
  * @brief need center cells if sums of their width < screen size
  */
-+ (BOOL)needCentred;
++ (BOOL)needCentered;
 
 
 //change styles of all cells of current class

@@ -90,6 +90,7 @@
     if (!_collectionView)
     {
         _cellGap = NSIntegerMin;
+        _needCentered = NSIntegerMin;
         _fontMedium = nil;
         _font = nil;
         _tintColor = nil;
@@ -182,13 +183,17 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    BOOL needCentred = NO;
-    if ([_class isSubclassOfClass:[EHHorizontalViewCell class]])
+    BOOL needCentered = NO;
+    if (_needCentered >= 0)
     {
-        needCentred = [_class needCentred];
+        needCentered = _needCentered;
+    }
+    else if ([_class isSubclassOfClass:[EHHorizontalViewCell class]])
+    {
+        needCentered = [_class needCentered];
     }
     
-    if (needCentred)
+    if (needCentered)
     {
         float width = 0;
         for (int i = 0; i < _objectsCount; i++)
@@ -199,6 +204,7 @@
         if (width < self.bounds.size.width)
             return UIEdgeInsetsMake(0, (self.bounds.size.width - width) / 2.0, 0, 0);
     }
+    
     return UIEdgeInsetsZero;
 }
 
