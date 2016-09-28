@@ -23,6 +23,7 @@
 
     UICollectionViewFlowLayout * _flowLayout;
     NSIndexPath * _selectedIndexPath;
+    EHHorizontalViewCell *_selectedCell;
     CGRect _lastCellRect;
     Class _class;
     NSUInteger _objectsCount;
@@ -241,6 +242,7 @@
     {
         _lastCellRect = cell.frame;
         cell.selectedCell = YES;
+        _selectedCell = cell;
     }
     return cell;
 }
@@ -265,19 +267,15 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    EHHorizontalViewCell * oldCell = nil;
-    if (_selectedIndexPath)
+    if (_selectedCell)
     {
-        if (_selectedIndexPath.row < _objectsCount)
-        {
-            oldCell = (EHHorizontalViewCell*)[collectionView cellForItemAtIndexPath:_selectedIndexPath];
-            oldCell.selectedCell = NO;
-        }
+        _selectedCell.selectedCell = NO;
     }
     
     EHHorizontalViewCell * newCell = (EHHorizontalViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
     _selectedIndexPath = indexPath;
-    
+    _selectedCell = newCell;
+
     if (_selectedIndexPath.row < _objectsCount)
     {
         [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
