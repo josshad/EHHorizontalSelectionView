@@ -41,6 +41,19 @@ or your custom cell:
 
 	[_hSelView2 registerCellNib:[UINib nibWithNibName:@"MyCustomCellNib" bundle:nil] withClass:[EHHorizontalViewCell class]];
 
+Setting delegate:
+
+	_hSelView1.delegate = self;
+
+Delegate needs for getting data for selection view:
+
+	- (NSUInteger)numberOfItemsInHorizontalSelection:(EHHorizontalSelectionView*)hSelView
+	- (NSString *)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView*)hSelView
+	
+and for receiving selection event:
+
+	- (void)horizontalSelection:(EHHorizontalSelectionView * _Nonnull)hSelView didSelectObjectAtIndex:(NSUInteger)index;
+	
 ##Customization
 
 ###Color
