@@ -1,4 +1,7 @@
-## Version 1.0.2
+### Version 1.0.3
+* text color customization
+
+### Version 1.0.2
 * fix issues
 
 ### Version 1.0.0

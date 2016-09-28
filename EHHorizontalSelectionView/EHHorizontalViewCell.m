@@ -37,7 +37,7 @@
         [self addSubview:l];
         self.titleLabel = l;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.textColor = [UIColor whiteColor];
+        self.titleLabel.textColor = [[self class] textColor];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         
         UIView * sView = [[UIView alloc] init];
@@ -67,15 +67,25 @@
     return self;
 }
 
+#pragma mark - properies
+
 - (void)setFont:(UIFont *)font
 {
+    _font = font;
     self.titleLabel.font = font;
 }
 
 - (void)setTintColor:(UIColor *)tintColor
 {
+    _tintColor = tintColor;
     self.coloredView.backgroundColor = tintColor;
     self.coloredView.layer.shadowColor = tintColor.CGColor;
+}
+
+- (void)setTextColor:(UIColor *)textColor
+{
+    _textColor = textColor;
+    self.titleLabel.textColor = textColor;
 }
 
 #pragma mark - class methods
@@ -98,6 +108,7 @@
 + (NSMutableDictionary *)styles
 {
     return [@{ @"tintColor" : [UIColor colorWithRed:0 green:122/255.0 blue:1 alpha:1],
+               @"textColor" : [UIColor whiteColor],
               @"font" : [UIFont fontWithName:@"HelveticaNeue" size:18.0],
               @"fontMedium" : [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0],
               @"cellGap" : @(_EHDefaultGap * 4),
@@ -124,6 +135,13 @@
     return YES;
 }
 
+
++ (void)updateTextColor:(UIColor * _Nonnull)color
+{
+    [[self class] checkStyles];
+    
+    [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:color forKey:@"textColor"];
+}
 
 + (void)updateTintColor:(UIColor *)color
 {
@@ -158,6 +176,13 @@
     [[self class] checkStyles];
     
     [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:@(needCentered) forKey:@"needCentered"];
+}
+
++ (UIColor * _Nonnull)textColor
+{
+    [[self class] checkStyles];
+    
+    return [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"textColor"];
 }
 
 + (UIColor *)tintColor

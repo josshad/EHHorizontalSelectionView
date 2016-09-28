@@ -94,6 +94,7 @@
         _fontMedium = nil;
         _font = nil;
         _tintColor = nil;
+        _textColor = nil;
         _selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         _flowLayout  = [[UICollectionViewFlowLayout alloc] init];
         [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -218,6 +219,11 @@
     if (_tintColor)
     {
         [cell setTintColor:_tintColor];
+    }
+    
+    if (_textColor)
+    {
+        [cell setTextColor:_textColor];
     }
     
     if (_font)

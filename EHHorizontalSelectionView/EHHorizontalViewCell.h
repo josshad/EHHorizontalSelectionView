@@ -38,6 +38,11 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 @property (nonatomic, assign) BOOL selectedCell;
 
 /*!
+ * @brief text color of current cell. If not setted value will take from cell class method +textColor
+ */
+@property (nonatomic, strong) UIColor * _Nullable textColor;
+
+/*!
  * @brief tint color of current cell. If not setted value will take from cell class method +tintColor
  */
 @property (nonatomic, strong) UIColor * _Nullable tintColor;
@@ -83,6 +88,12 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
  */
 + (UIFont * _Nonnull)fontMedium;
 
+
+/*!
+ * @brief default color for text of all cells of current class.
+ */
++ (UIColor * _Nonnull)textColor;
+
 /*!
  * @brief default color for selection of all cells of current class.
  */
@@ -100,6 +111,13 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 
 
 //change styles of all cells of current class
+
+
+/*!
+ * @brief change default text color
+ */
++ (void)updateTextColor:(UIColor * _Nonnull)color;
+
 
 /*!
  * @brief change default tint color

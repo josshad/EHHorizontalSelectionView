@@ -54,6 +54,10 @@
     [_hSelView3 setCellGap:15];
     
     
+    [_hSelView1 setTextColor:[UIColor redColor]];
+    
+    [EHHorizontalLineViewCell updateTextColor:[UIColor colorWithHex:0x0085d2]];
+    
     [_hSelView1 setNeedCentered:YES];
 }
 
@@ -70,7 +74,7 @@
     {
         return [_arr2 count];
     }
-    else if (hSelView == _hSelView4)
+    else if (hSelView == _hSelView4 || hSelView == _hSelView3)
     {
         return [_arr3 count];
     }
@@ -87,7 +91,7 @@
     {
         return [[_arr2 objectAtIndex:index] uppercaseString];
     }
-    else if (hSelView == _hSelView4)
+    else if (hSelView == _hSelView4 || hSelView == _hSelView3)
     {
         return [[_arr3 objectAtIndex:index] uppercaseString];
     }
