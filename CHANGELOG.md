@@ -1,3 +1,6 @@
+### Version 1.0.4
+* xib in podspec fix
+
 ### Version 1.0.3
 * text color customization
 
