@@ -21,16 +21,16 @@
 		838428E21D7591CD00DC2AB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838428E01D7591CD00DC2AB3 /* Main.storyboard */; };
 		838428E41D7591CD00DC2AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 838428E31D7591CD00DC2AB3 /* Assets.xcassets */; };
 		838428E71D7591CD00DC2AB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838428E51D7591CD00DC2AB3 /* LaunchScreen.storyboard */; };
-		838429131D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 838429121D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests.m */; };
+		83F936AF1D8BF38A009AEA46 /* EHHorizontalSelectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 838429121D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		838429151D75A38B00DC2AB3 /* PBXContainerItemProxy */ = {
+		83F936AD1D8BE546009AEA46 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 838428CC1D7591CD00DC2AB3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 838428D31D7591CD00DC2AB3;
-			remoteInfo = EHHorizontalSelectionView;
+			remoteInfo = EHHorizontalSelectionViewExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -221,7 +221,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				838429161D75A38B00DC2AB3 /* PBXTargetDependency */,
+				83F936AE1D8BE546009AEA46 /* PBXTargetDependency */,
 			);
 			name = EHHorizontalSelectionViewTests;
 			productName = EHHorizontalSelectionViewTests;
@@ -308,17 +308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				838429131D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests.m in Sources */,
+				83F936AF1D8BF38A009AEA46 /* EHHorizontalSelectionViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		838429161D75A38B00DC2AB3 /* PBXTargetDependency */ = {
+		83F936AE1D8BE546009AEA46 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 838428D31D7591CD00DC2AB3 /* EHHorizontalSelectionViewExample */;
-			targetProxy = 838429151D75A38B00DC2AB3 /* PBXContainerItemProxy */;
+			targetProxy = 83F936AD1D8BE546009AEA46 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -454,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/EHHorizintalSelectionView";
 				INFOPLIST_FILE = EHHorizontalSelectionViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.josshad.EHHorizontalSelectionViewTests;
@@ -466,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/EHHorizintalSelectionView";
 				INFOPLIST_FILE = EHHorizontalSelectionViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.josshad.EHHorizontalSelectionViewTests;

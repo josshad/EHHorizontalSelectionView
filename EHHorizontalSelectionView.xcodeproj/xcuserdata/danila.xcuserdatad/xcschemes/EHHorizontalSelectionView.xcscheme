@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "838428D31D7591CD00DC2AB3"
-               BuildableName = "EHHorizontalSelectionView.app"
-               BlueprintName = "EHHorizontalSelectionView"
+               BuildableName = "EHHorizontalSelectionViewExample.app"
+               BlueprintName = "EHHorizontalSelectionViewExample"
                ReferencedContainer = "container:EHHorizontalSelectionView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "838428D31D7591CD00DC2AB3"
-            BuildableName = "EHHorizontalSelectionView.app"
-            BlueprintName = "EHHorizontalSelectionView"
+            BuildableName = "EHHorizontalSelectionViewExample.app"
+            BlueprintName = "EHHorizontalSelectionViewExample"
             ReferencedContainer = "container:EHHorizontalSelectionView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "838428D31D7591CD00DC2AB3"
-            BuildableName = "EHHorizontalSelectionView.app"
-            BlueprintName = "EHHorizontalSelectionView"
+            BuildableName = "EHHorizontalSelectionViewExample.app"
+            BlueprintName = "EHHorizontalSelectionViewExample"
             ReferencedContainer = "container:EHHorizontalSelectionView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "838428D31D7591CD00DC2AB3"
-            BuildableName = "EHHorizontalSelectionView.app"
-            BlueprintName = "EHHorizontalSelectionView"
+            BuildableName = "EHHorizontalSelectionViewExample.app"
+            BlueprintName = "EHHorizontalSelectionViewExample"
             ReferencedContainer = "container:EHHorizontalSelectionView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
