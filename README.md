@@ -54,6 +54,13 @@ and for receiving selection event:
 
 	- (void)horizontalSelection:(EHHorizontalSelectionView * _Nonnull)hSelView didSelectObjectAtIndex:(NSUInteger)index;
 	
+##Tips
+
+In case of "the behavior of the UICollectionViewFlowLayout is not defined because:" may help:
+
+	self.automaticallyAdjustsScrollViewInsets = NO;
+	
+
 ##Customization
 
 ###Color
