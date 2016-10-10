@@ -1,3 +1,7 @@
+## Version 1.1.0
+* cell customizing via 
+	- (EHHorizontalViewCell * _Nullable)selectionView:(EHHorizontalSelectionView * _Nonnull)selectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+
 ### Version 1.0.4
 * xib in podspec fix
 
@@ -7,7 +11,7 @@
 ### Version 1.0.2
 * fix issues
 
-### Version 1.0.0
+## Version 1.0.0
 * updated documentation
 
 ### Version 0.9.4

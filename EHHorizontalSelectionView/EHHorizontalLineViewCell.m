@@ -18,6 +18,20 @@ static float _EHHorizontalColorHeight = 4;
     return _EHDefaultGap * 8;
 }
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        self.titleLabel.frame = self.bounds;
+        [self.titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+        UIView * tLabel = self.titleLabel;
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tLabel]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tLabel)]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tLabel]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tLabel)]];
+    }
+    return self;
+}
+
 - (UIView *)createSelectedView
 {
     self.clipsToBounds = NO;
@@ -27,13 +41,7 @@ static float _EHHorizontalColorHeight = 4;
     self.coloredView.layer.shadowColor = self.coloredView.backgroundColor.CGColor;
     self.coloredView.layer.shadowOpacity = 1;
     self.selectedView.clipsToBounds = NO;
-    
-    self.titleLabel.frame = self.bounds;
-    [self.titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-    UIView * tLabel = self.titleLabel;
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tLabel]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tLabel)]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tLabel]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(tLabel)]];
-    
+
     [self updateSelectedFrames];
     return self.selectedView;
 }

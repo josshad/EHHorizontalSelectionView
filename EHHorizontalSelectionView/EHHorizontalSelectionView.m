@@ -26,6 +26,7 @@
     EHHorizontalViewCell *_selectedCell;
     CGRect _lastCellRect;
     Class _class;
+    NSString * _identifier;
     NSUInteger _objectsCount;
     UINib * _nib;
 }
@@ -54,19 +55,50 @@
 #pragma mark - public
 - (void)registerCellWithClass:(Class)class
 {
-    NSCAssert([class isSubclassOfClass:[EHHorizontalViewCell class]],  @"registerCellWithClass: received class that is not subclass of EHHorizontalViewCell class" );
-    _class = class;
-    [_collectionView registerClass:class forCellWithReuseIdentifier:[_class reuseIdentifier]];
+    [self registerCellWithClass:class reuseIdentifier:nil];
 }
 
 - (void)registerCellNib:(UINib *)nib withClass:(Class)class
 {
+    [self registerCellNib:nib withClass:class reuseIdentifier:nil];
+}
+
+- (void)registerCellWithClass:(Class _Nonnull)class reuseIdentifier:(NSString *)identifier
+{
+    NSCAssert([class isSubclassOfClass:[EHHorizontalViewCell class]],  @"registerCellWithClass: received class that is not subclass of EHHorizontalViewCell class" );
+    _class = class;
+    
+    if (!identifier || [identifier length] == 0)
+    {
+        _identifier = [_class reuseIdentifier];
+    }
+    else
+    {
+        _identifier = identifier;
+    }
+    [_collectionView registerClass:class forCellWithReuseIdentifier:_identifier];
+}
+
+- (void)registerCellNib:(UINib * _Nonnull)nib withClass:(Class _Nonnull)class reuseIdentifier:(NSString *)identifier
+{
     NSCAssert([class isSubclassOfClass:[EHHorizontalViewCell class]],  @"registerCellNibWithName:withClass: received class that is not subclass of EHHorizontalViewCell class" );
     _class = class;
-    [_collectionView registerNib:nib forCellWithReuseIdentifier:[_class reuseIdentifier]];
+    if (!identifier || [identifier length] == 0)
+    {
+        _identifier = [_class reuseIdentifier];
+    }
+    else
+    {
+        _identifier = identifier;
+    }
+    [_collectionView registerNib:nib forCellWithReuseIdentifier:_identifier];
     _nib = nib;
 }
 
+- (EHHorizontalViewCell * _Nonnull)dequeueReusableCellWithReuseIdentifier:(NSString * _Nonnull)identifier forIndexPath:(NSIndexPath * _Nonnull)indexPath
+{
+    return [self.collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+}
 
 - (NSUInteger)selectedIndex
 {
@@ -177,7 +209,6 @@
     }
     else
     {
-        
         EHHorizontalViewCell * cell = [[_nib instantiateWithOwner:nil options:nil] lastObject];
         return cell.bounds.size;
     }
@@ -212,11 +243,28 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    EHHorizontalViewCell * cell = (EHHorizontalViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:[_class reuseIdentifier] forIndexPath:indexPath];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(selectionView:cellForItemAtIndexPath:)])
+    {
+        EHHorizontalViewCell * cell = [self.delegate selectionView:self cellForItemAtIndexPath:indexPath];
+        if (cell != nil)
+        {
+            cell.selectedCell = NO;
+            if (_selectedIndexPath.row == indexPath.row)
+            {
+                _lastCellRect = cell.frame;
+                cell.selectedCell = YES;
+                _selectedCell = cell;
+            }
+            return cell;
+        }
+    }
+    
+    
+    EHHorizontalViewCell * cell = (EHHorizontalViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:_identifier forIndexPath:indexPath];
     
     
     [cell setTitleLabelText:[_delegate titleForItemAtIndex:indexPath.row forHorisontalSelection:self]];
-
+    
     if (_tintColor)
     {
         [cell setTintColor:_tintColor];
@@ -245,6 +293,7 @@
         _selectedCell = cell;
     }
     return cell;
+    
 }
 
 

@@ -75,6 +75,38 @@
  */
 - (void)registerCellNib:(UINib * _Nonnull)nib withClass:(Class _Nonnull)class;
 
+
+/*!
+ * @brief register class for use by selection view
+ *
+ * @param class Class to register (must be subclass of EHHorizontalViewCell)
+ *
+ * @param identifier Reuse identifier for cell. Default is [class reuseIdentifier]
+ */
+- (void)registerCellWithClass:(Class _Nonnull)class reuseIdentifier:(NSString * _Nullable)identifier;
+
+/*!
+ * @brief register nib for use by selection view
+ *
+ * @param nib UI of cell
+ *
+ * @param class Class to register (must be subclass of EHHorizontalViewCell)
+ *
+ * @param identifier Reuse identifier for cell. Default is [class reuseIdentifier]
+ */
+- (void)registerCellNib:(UINib * _Nonnull)nib withClass:(Class _Nonnull)class reuseIdentifier:(NSString * _Nullable)identifier;
+
+
+/*!
+ * @brief geting cell for registered reuse identifier
+ *
+ * @param identifier Reuse identifier for cell. For example [class reuseIdentifier]
+ *
+ * @param indexPath indexPath for cell
+ */
+- (EHHorizontalViewCell * _Nonnull)dequeueReusableCellWithReuseIdentifier:(NSString * _Nonnull)identifier forIndexPath:(NSIndexPath * _Nonnull)indexPath;
+
+
 /*!
  * @brief returns selected index
  */
@@ -114,10 +146,19 @@
 /*!
  * @brief called when some cell of selection view became selected
  *
- * @param hSelView Current selectionView
+ * @param selectionView Current selectionView
  *
  * @param index Index of selected item in selection view
  */
-- (void)horizontalSelection:(EHHorizontalSelectionView * _Nonnull)hSelView didSelectObjectAtIndex:(NSUInteger)index;
+- (void)horizontalSelection:(EHHorizontalSelectionView * _Nonnull)selectionView didSelectObjectAtIndex:(NSUInteger)index;
 
+/*!
+ * @brief _optional_ method for custom EHHorizontalViewCells
+ *
+ * @param selectionView Current selectionView
+ *
+ * @param indexPath Index of item
+ */
+- (EHHorizontalViewCell * _Nullable)selectionView:(EHHorizontalSelectionView * _Nonnull)selectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
+
