@@ -14,6 +14,7 @@
 
 - (void)awakeFromNib {
     [self createSelectedView];
+    [super awakeFromNib];
 }
 
 - (id)init
