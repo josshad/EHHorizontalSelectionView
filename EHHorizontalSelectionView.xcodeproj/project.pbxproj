@@ -21,9 +21,6 @@
 		838428E21D7591CD00DC2AB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838428E01D7591CD00DC2AB3 /* Main.storyboard */; };
 		838428E41D7591CD00DC2AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 838428E31D7591CD00DC2AB3 /* Assets.xcassets */; };
 		838428E71D7591CD00DC2AB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838428E51D7591CD00DC2AB3 /* LaunchScreen.storyboard */; };
-		838C37121DC24F5200D13C05 /* outfilex.csv in Resources */ = {isa = PBXBuildFile; fileRef = 838C37111DC24F5200D13C05 /* outfilex.csv */; };
-		838C37141DC2520400D13C05 /* outfilexx.csv in Resources */ = {isa = PBXBuildFile; fileRef = 838C37131DC2520400D13C05 /* outfilexx.csv */; };
-		838E3D0F1DC24B7E00E4EB65 /* outfilex.txt in Resources */ = {isa = PBXBuildFile; fileRef = 838E3D0E1DC24B7E00E4EB65 /* outfilex.txt */; };
 		83F936AF1D8BF38A009AEA46 /* EHHorizontalSelectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 838429121D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests.m */; };
 		83FB82651DABAB320072984F /* CustomHorizontalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB82631DABAB320072984F /* CustomHorizontalViewCell.m */; };
 		83FB82661DABAB320072984F /* CustomHorizontalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83FB82641DABAB320072984F /* CustomHorizontalViewCell.xib */; };
@@ -72,9 +69,6 @@
 		838429101D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EHHorizontalSelectionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		838429121D75A38B00DC2AB3 /* EHHorizontalSelectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHHorizontalSelectionViewTests.m; sourceTree = "<group>"; };
 		838429141D75A38B00DC2AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		838C37111DC24F5200D13C05 /* outfilex.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = outfilex.csv; sourceTree = "<group>"; };
-		838C37131DC2520400D13C05 /* outfilexx.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = outfilexx.csv; sourceTree = "<group>"; };
-		838E3D0E1DC24B7E00E4EB65 /* outfilex.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = outfilex.txt; sourceTree = "<group>"; };
 		83FB82621DABAB320072984F /* CustomHorizontalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHorizontalViewCell.h; sourceTree = "<group>"; };
 		83FB82631DABAB320072984F /* CustomHorizontalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHorizontalViewCell.m; sourceTree = "<group>"; };
 		83FB82641DABAB320072984F /* CustomHorizontalViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHorizontalViewCell.xib; sourceTree = "<group>"; };
@@ -177,9 +171,6 @@
 				838428E01D7591CD00DC2AB3 /* Main.storyboard */,
 				838428E31D7591CD00DC2AB3 /* Assets.xcassets */,
 				838428E51D7591CD00DC2AB3 /* LaunchScreen.storyboard */,
-				838C37131DC2520400D13C05 /* outfilexx.csv */,
-				838C37111DC24F5200D13C05 /* outfilex.csv */,
-				838E3D0E1DC24B7E00E4EB65 /* outfilex.txt */,
 				838428E81D7591CD00DC2AB3 /* Info.plist */,
 				838428D71D7591CD00DC2AB3 /* Supporting Files */,
 				835F0ACD1D75C14C0011367A /* Customizing */,
@@ -305,12 +296,9 @@
 				83FB826C1DABB66E0072984F /* 2@2x.png in Resources */,
 				83FB826E1DABB66E0072984F /* 4@2x.png in Resources */,
 				83FB82661DABAB320072984F /* CustomHorizontalViewCell.xib in Resources */,
-				838E3D0F1DC24B7E00E4EB65 /* outfilex.txt in Resources */,
 				838428E21D7591CD00DC2AB3 /* Main.storyboard in Resources */,
 				835F0B321D7839D80011367A /* EHHorizontalViewCell.xib in Resources */,
-				838C37121DC24F5200D13C05 /* outfilex.csv in Resources */,
 				83FB826B1DABB66E0072984F /* 1@2x.png in Resources */,
-				838C37141DC2520400D13C05 /* outfilexx.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

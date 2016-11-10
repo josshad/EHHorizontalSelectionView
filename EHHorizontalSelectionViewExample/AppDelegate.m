@@ -17,32 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"outfilexx"
-                                                     ofType:@"csv"];
-    NSString * csv = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    NSArray * array = [csv componentsSeparatedByString:@"\n"];
-    NSInteger index = 1;
-    NSMutableString * saveString = [NSMutableString string];
-    for (NSString * str in array)
-    {
-        NSArray * arr = [str componentsSeparatedByString:@";"];
-        
-        NSString * strToSave = [arr lastObject];
-        if (strToSave.length < 3)
-        {
-            strToSave = [arr firstObject];
-        }
-        strToSave = [strToSave stringByReplacingOccurrencesOfString:@"," withString:@";"];
-        [saveString appendFormat:@"%ld,%@\n",(long)index,strToSave];
-        
-        index ++;
-    }
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *savepath = [documentsDirectory stringByAppendingPathComponent:@"EmployeeData.csv"];
-
-    [saveString writeToFile:savepath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     return YES;
 }
 
