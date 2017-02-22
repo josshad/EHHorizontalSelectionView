@@ -275,6 +275,10 @@
             
             if (_altTextColor)
                 self.titleLabel.textColor = _altTextColor;
+            else if ([[self class] altTextColor])
+            {
+                self.titleLabel.textColor = [[self class] altTextColor];
+            }
             else
                 self.titleLabel.textColor = [self.titleLabel.textColor colorWithAlphaComponent:0.5];
                 

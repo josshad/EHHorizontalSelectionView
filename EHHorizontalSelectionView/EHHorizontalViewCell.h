@@ -100,9 +100,9 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 + (UIColor * _Nonnull)textColor;
 
 /*!
- * @brief default color for selected text of all cells of current class.
+ * @brief alternative text color of all cells of current class.
  */
-+ (UIColor * _Nonnull)selectedTextColor;
++ (UIColor * _Nonnull)altTextColor;
 
 /*!
  * @brief default color for selection of all cells of current class.
@@ -129,9 +129,10 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 + (void)updateTextColor:(UIColor * _Nonnull)color;
 
 /*!
- * @brief change selected text color for all cells
+ * @brief change alternative text color for all cells of class
  */
-+ (void)updateSelectedTextColor:(UIColor * _Nonnull)color;
++ (void)updateAltTextColor:(UIColor * _Nonnull)color;
+
 
 /*!
  * @brief change default tint color

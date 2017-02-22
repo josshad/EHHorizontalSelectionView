@@ -48,8 +48,9 @@
     
     
     [_hSelView1 setTextColor:[UIColor redColor]];
-    
     [_hSelView1 setAltTextColor:[UIColor orangeColor]];
+    
+    [EHHorizontalLineViewCell updateAltTextColor:[UIColor colorWithHex:0xF181A2]];
     
     [EHHorizontalLineViewCell updateTextColor:[UIColor colorWithHex:0x0085d2]];
     
