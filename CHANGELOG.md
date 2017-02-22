@@ -1,3 +1,6 @@
+### Version 1.1.2
+* alternative color for non selected cells
+
 ## Version 1.1.0
 * cell customizing via 
 	- (EHHorizontalViewCell * _Nullable)selectionView:(EHHorizontalSelectionView * _Nonnull)selectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;

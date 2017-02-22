@@ -49,6 +49,8 @@
     
     [_hSelView1 setTextColor:[UIColor redColor]];
     
+    [_hSelView1 setAltTextColor:[UIColor orangeColor]];
+    
     [EHHorizontalLineViewCell updateTextColor:[UIColor colorWithHex:0x0085d2]];
     
     [_hSelView1 setNeedCentered:YES];
@@ -100,6 +102,7 @@
         NSString * str = [NSString stringWithFormat:@"%li",(long)indexPath.row + 1];
         UIImage * image = [UIImage imageNamed:str];
         cell.iconView.image = image;
+        cell.altTextColor = [UIColor blackColor];
         return cell;
     }
     return nil;

@@ -43,6 +43,11 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 @property (nonatomic, strong) UIColor * _Nullable textColor;
 
 /*!
+ * @brief additional text color. Used customize appearence of nonSelected cells
+ */
+@property (nonatomic, strong) UIColor * _Nullable altTextColor;
+
+/*!
  * @brief tint color of current cell. If not setted value will take from cell class method +tintColor
  */
 @property (nonatomic, strong) UIColor * _Nullable tintColor;
@@ -95,6 +100,11 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 + (UIColor * _Nonnull)textColor;
 
 /*!
+ * @brief default color for selected text of all cells of current class.
+ */
++ (UIColor * _Nonnull)selectedTextColor;
+
+/*!
  * @brief default color for selection of all cells of current class.
  */
 + (UIColor * _Nonnull)tintColor;
@@ -118,6 +128,10 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
  */
 + (void)updateTextColor:(UIColor * _Nonnull)color;
 
+/*!
+ * @brief change selected text color for all cells
+ */
++ (void)updateSelectedTextColor:(UIColor * _Nonnull)color;
 
 /*!
  * @brief change default tint color

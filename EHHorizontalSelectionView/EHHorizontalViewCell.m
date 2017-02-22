@@ -89,6 +89,14 @@
     self.titleLabel.textColor = textColor;
 }
 
+
+
+- (void)setAltTextColor:(UIColor *)textColor
+{
+    _altTextColor = textColor;
+}
+
+
 #pragma mark - class methods
 
 + (void)loadStyles
@@ -109,7 +117,7 @@
 + (NSMutableDictionary *)styles
 {
     return [@{ @"tintColor" : [UIColor colorWithRed:0 green:122/255.0 blue:1 alpha:1],
-               @"textColor" : [UIColor whiteColor],
+               @"textColor" : [UIColor colorWithWhite:1 alpha:1],
               @"font" : [UIFont fontWithName:@"HelveticaNeue" size:18.0],
               @"fontMedium" : [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0],
               @"cellGap" : @(_EHDefaultGap * 4),
@@ -142,6 +150,13 @@
     [[self class] checkStyles];
     
     [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:color forKey:@"textColor"];
+}
+
++ (void)updateAltTextColor:(UIColor * _Nonnull)color
+{
+    [[self class] checkStyles];
+    
+    [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] setObject:color forKey:@"altTextColor"];
 }
 
 + (void)updateTintColor:(UIColor *)color
@@ -186,6 +201,13 @@
     return [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"textColor"];
 }
 
++ (UIColor * _Nonnull)altTextColor
+{
+    [[self class] checkStyles];
+    
+    return [[_EHHorisontalSelectionStyles objectForKey:[[self class] reuseIdentifier]] objectForKey:@"altTextColor"];
+}
+
 + (UIColor *)tintColor
 {
     [[self class] checkStyles];
@@ -225,13 +247,23 @@
 
 - (void)setSelectedCell:(BOOL)selected fromCellRect:(CGRect)rect
 {
+    self.titleLabel.alpha = 1;
     if (selected)
     {
         self.selectedView.hidden = NO;
         
         [UIView animateWithDuration:!CGRectIsNull(rect) ? 0.3 : 0.0 animations:^{
             self.titleLabel.font = [[self class] fontMedium];
-            self.titleLabel.alpha = 1.0;
+            
+            if (_textColor)
+            {
+                self.titleLabel.textColor = _textColor;
+            }
+            else
+            {
+                self.titleLabel.textColor = [[self class] textColor];
+            }
+            
         }];
         
     }
@@ -240,7 +272,13 @@
         self.selectedView.hidden = YES;
         [UIView animateWithDuration:!CGRectIsNull(rect) ? 0.3 : 0.0 animations:^{
             self.titleLabel.font = [[self class] font];
-            self.titleLabel.alpha = .5;
+            
+            if (_altTextColor)
+                self.titleLabel.textColor = _altTextColor;
+            else
+                self.titleLabel.textColor = [self.titleLabel.textColor colorWithAlphaComponent:0.5];
+                
+            
         }];
         
     }

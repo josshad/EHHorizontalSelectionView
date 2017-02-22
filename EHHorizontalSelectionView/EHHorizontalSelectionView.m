@@ -275,6 +275,11 @@
         [cell setTextColor:_textColor];
     }
     
+    if (_altTextColor)
+    {
+        [cell setAltTextColor:_altTextColor];
+    }
+    
     if (_font)
     {
         [cell setFont:_font];

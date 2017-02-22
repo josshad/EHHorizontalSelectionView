@@ -28,6 +28,11 @@
 @property (nonatomic, strong) UIColor * _Nullable textColor;
 
 /*!
+ * @brief additional text color. Used customize appearence of nonSelected cells. May be setted for all cells of class with +updateAltTextColor
+ */
+@property (nonatomic, strong) UIColor * _Nullable altTextColor;
+
+/*!
  * @brief tint color of cells. If not setted value will take from cell class method +tintColor
  */
 @property (nonatomic, strong) UIColor * _Nullable tintColor;
