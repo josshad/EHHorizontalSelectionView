@@ -18,7 +18,7 @@ Then run `pod install`.
 ### Manual
 Add files from EHHorizontalSelectionView  to your project 
 
-##Usage
+## Usage
 	#import <EHHorizontalSelectionView/EHHorizontalSelectionView.h>
 
 You can use EHHorizontalSelectionView as outlet in your xib or storyboard
@@ -54,16 +54,16 @@ and for receiving selection event:
 
 	- (void)horizontalSelection:(EHHorizontalSelectionView * _Nonnull)hSelView didSelectObjectAtIndex:(NSUInteger)index;
 	
-##Tips
+## Tips
 
 In case of "the behavior of the UICollectionViewFlowLayout is not defined because:" may help:
 
 	self.automaticallyAdjustsScrollViewInsets = NO;
 	
 
-##Customization
+## Customization
 
-###Color
+### Color
 You can change default tint color for cell of selected type
 
     [EHHorizontalLineViewCell updateTintColor:[UIColor colorWithHex:0x00c264]];
@@ -79,7 +79,7 @@ Or you can change tint color for chosen selection view
 
         [_hSelView2 setTintColor:[UIColor colorWithHex:0xff46c7]];
 
-###Fonts
+### Fonts
   
 Change default appearance
 
@@ -90,7 +90,7 @@ Change for chosen selectionView
 
     [_hSelView3 setFont:[UIFont systemFontOfSize:17]];
     
-###Additional width for cell (inset)
+### Additional width for cell (inset)
 
 Change default appearance
 
@@ -101,11 +101,11 @@ Change for chosen selectionView
     [_hSelView3 setCellGap:15.f];    
 
    
-###Line height (for EHHorizontalLineViewCell)
+### Line height (for EHHorizontalLineViewCell)
 
     [EHHorizontalLineViewCell updateColorHeight:2];
 
-##Author
+## Author
 Danila Gusev
 
 <a href="mailto:jos.shad@gmail.com">jos.shad@gmail.com</a>
