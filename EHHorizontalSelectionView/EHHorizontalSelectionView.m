@@ -146,7 +146,13 @@
         [_collectionView setShowsVerticalScrollIndicator:NO];
         [_collectionView setAlwaysBounceHorizontal:YES];
         
-        [self registerCellNib:[UINib nibWithNibName:@"EHHorizontalViewCell"  bundle:[NSBundle bundleForClass:[EHHorizontalViewCell class]]] withClass:[EHHorizontalViewCell class]];
+        NSBundle * frameworkBundle = [NSBundle bundleForClass:[EHHorizontalViewCell class]];
+        NSURL * bundleURL = [[frameworkBundle resourceURL] URLByAppendingPathComponent:@"EHHorizontalSelectionView.bundle"];
+        NSBundle * podBundle = [NSBundle bundleWithURL:bundleURL];
+        
+        podBundle = (podBundle != nil) ? podBundle : frameworkBundle;
+        
+        [self registerCellNib:[UINib nibWithNibName:@"EHHorizontalViewCell"  bundle:podBundle] withClass:[EHHorizontalViewCell class]];
         
         [self addSubview:_collectionView];
         
