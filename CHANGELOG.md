@@ -1,3 +1,6 @@
+## Version 1.2.0
+* fix swift3 issue
+
 ### Version 1.1.3
 * remove unused files
 
