@@ -1,3 +1,6 @@
+### Version 1.1.3
+* remove unused files
+
 ### Version 1.1.2
 * alternative color for non selected cells
 
