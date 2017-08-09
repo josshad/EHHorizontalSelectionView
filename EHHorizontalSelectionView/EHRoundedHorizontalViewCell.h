@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EHHorizontalLineViewCell.h"
-
+IB_DESIGNABLE
 @interface EHRoundedHorizontalViewCell : EHHorizontalLineViewCell
 
 @end

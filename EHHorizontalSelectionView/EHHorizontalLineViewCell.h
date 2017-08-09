@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "EHHorizontalViewCell.h"
 
+NS_ASSUME_NONNULL_BEGIN
+IB_DESIGNABLE
 @interface EHHorizontalLineViewCell : EHHorizontalViewCell
 
 /*!
@@ -22,3 +24,5 @@
 + (void)updateColorHeight:(float)newH;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -31,30 +31,14 @@
     _hSelView2.delegate = self;
     _hSelView3.delegate = self;
     
-    
-    //set cell classes
-    [_hSelView2 registerCellWithClass:[EHHorizontalLineViewCell class]];
-    
+
     [_hSelView3 registerCellNib:[UINib nibWithNibName:@"CustomHorizontalViewCell" bundle:nil] withClass:[CustomHorizontalViewCell class]];
-    
-    //Set line color for _hSelView2 selection view
-    [_hSelView2 setTintColor:[UIColor colorWithHex:0xff46c7]];
     
     //Update color line height for EHHorizontalLineViewCell
     [EHHorizontalLineViewCell updateColorHeight:2.f];
     
     //Set font for _hSelView3 selection view
     [_hSelView3 setFont:[UIFont systemFontOfSize:18]];
-    
-    
-    [_hSelView1 setTextColor:[UIColor redColor]];
-    [_hSelView1 setAltTextColor:[UIColor orangeColor]];
-    
-    [EHHorizontalLineViewCell updateAltTextColor:[UIColor colorWithHex:0xF181A2]];
-    
-    [EHHorizontalLineViewCell updateTextColor:[UIColor colorWithHex:0x0085d2]];
-    
-    [_hSelView1 setNeedCentered:YES];
 }
 
 
@@ -103,7 +87,6 @@
         NSString * str = [NSString stringWithFormat:@"%li",(long)indexPath.row + 1];
         UIImage * image = [UIImage imageNamed:str];
         cell.iconView.image = image;
-        cell.altTextColor = [UIColor blackColor];
         return cell;
     }
     return nil;

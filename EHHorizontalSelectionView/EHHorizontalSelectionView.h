@@ -13,49 +13,51 @@
 
 @protocol EHHorizontalSelectionViewProtocol;
 
+NS_ASSUME_NONNULL_BEGIN
+
+IB_DESIGNABLE
 @interface EHHorizontalSelectionView : UIView
 
 /*!
  * @brief Delegate for selection view. If not null, then must realise - (NSUInteger)numberOfItemsInHorizontalSelection:(EHHorizontalSelectionView* _Nonnull)hSelView and - (NSString * _Nullable)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView* _Nonnull)hSelView methods
  *
  */
-@property (nonatomic, weak) id<EHHorizontalSelectionViewProtocol> _Nullable delegate;
-
+@property (nonatomic, weak) id<EHHorizontalSelectionViewProtocol> delegate;
 
 /*!
  * @brief text color of cells. If not setted value will take from cell class method +textColor
  */
-@property (nonatomic, strong) UIColor * _Nullable textColor;
+@property (nonatomic, strong, nullable) IBInspectable UIColor * textColor;
 
 /*!
  * @brief additional text color. Used customize appearence of nonSelected cells. May be setted for all cells of class with +updateAltTextColor
  */
-@property (nonatomic, strong) UIColor * _Nullable altTextColor;
+@property (nonatomic, strong, nullable) IBInspectable UIColor * altTextColor;
 
 /*!
  * @brief tint color of cells. If not setted value will take from cell class method +tintColor
  */
-@property (nonatomic, strong) UIColor * _Nullable tintColor;
+@property (nonatomic, strong, nullable) IBInspectable UIColor * tintColor;
 
 /*!
  * @brief font of cells. If not setted value will take from cell class method +font
  */
-@property (nonatomic, strong) UIFont * _Nullable font;
+@property (nonatomic, strong, nullable) UIFont * font;
 
 /*!
  * @brief selected font of cells. If not setted value will take from cell class method +fontMedium
  */
-@property (nonatomic, strong) UIFont * _Nullable fontMedium;
+@property (nonatomic, strong, nullable) UIFont * fontMedium;
 
 /*!
  * @brief cell additional width. If not setted value will take from cell class method +cellGap
  */
-@property (nonatomic, assign) float cellGap;
+@property (nonatomic, assign) IBInspectable CGFloat cellGap;
 
 /*!
  * @brief need center cells if sums of their width < screen size. If not setted value will take from cell class method +needCentered
  */
-@property (nonatomic, assign) NSInteger needCentered;
+@property (nonatomic, assign) IBInspectable BOOL needCentered;
 
 /*!
  * @brief select element of selection view
@@ -69,7 +71,7 @@
  *
  * @param class Class to register (must be subclass of EHHorizontalViewCell)
  */
-- (void)registerCellWithClass:(Class _Nonnull)class;
+- (void)registerCellWithClass:(Class)class;
 
 /*!
  * @brief register nib for use by selection view
@@ -78,7 +80,7 @@
  *
  * @param class Class to register (must be subclass of EHHorizontalViewCell)
  */
-- (void)registerCellNib:(UINib * _Nonnull)nib withClass:(Class _Nonnull)class;
+- (void)registerCellNib:(UINib *)nib withClass:(Class)class;
 
 
 /*!
@@ -88,7 +90,7 @@
  *
  * @param identifier Reuse identifier for cell. Default is [class reuseIdentifier]
  */
-- (void)registerCellWithClass:(Class _Nonnull)class reuseIdentifier:(NSString * _Nullable)identifier;
+- (void)registerCellWithClass:(Class)class reuseIdentifier:(NSString * _Nullable)identifier;
 
 /*!
  * @brief register nib for use by selection view
@@ -99,7 +101,7 @@
  *
  * @param identifier Reuse identifier for cell. Default is [class reuseIdentifier]
  */
-- (void)registerCellNib:(UINib * _Nonnull)nib withClass:(Class _Nonnull)class reuseIdentifier:(NSString * _Nullable)identifier;
+- (void)registerCellNib:(UINib *)nib withClass:(Class)class reuseIdentifier:(NSString * _Nullable)identifier;
 
 
 /*!
@@ -109,7 +111,7 @@
  *
  * @param indexPath indexPath for cell
  */
-- (EHHorizontalViewCell * _Nonnull)dequeueReusableCellWithReuseIdentifier:(NSString * _Nonnull)identifier forIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (EHHorizontalViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString * _Nonnull)identifier forIndexPath:(NSIndexPath *)indexPath;
 
 
 /*!
@@ -144,18 +146,53 @@
  *
  * @param hSelView Current selectionView
  */
-- (NSString * _Nullable)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView* _Nonnull)hSelView;
+- (NSString * _Nullable)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView*)hSelView;
 
 @optional
+
+/*!
+ * @brief called when some cell of selection view will be selected
+ *
+ * @param selectionView Current selectionView
+ *
+ * @param index Index of selected item in selection view
+ */
+- (void)horizontalSelection:(EHHorizontalSelectionView *)selectionView willSelectObjectAtIndex:(NSUInteger)index;
+
+/*!
+ * @brief called when some cell of selection view will be selected
+ *
+ * @param selectionView Current selectionView
+ *
+ *
+ * @param selectedCell Cell that became selected
+ *
+ * @param index Index of selected item in selection view
+ */
+- (void)horizontalSelection:(EHHorizontalSelectionView *)selectionView willSelectObject:(EHHorizontalViewCell *)selectedCell atIndex:(NSUInteger)index;
+
+
+/*!
+ * @brief called when some cell of selection view will became selected
+ *
+ * @param selectionView Current selectionView
+ *
+ * @param index Index of selected item in selection view
+ */
+- (void)horizontalSelection:(EHHorizontalSelectionView *)selectionView didSelectObjectAtIndex:(NSUInteger)index;
 
 /*!
  * @brief called when some cell of selection view became selected
  *
  * @param selectionView Current selectionView
  *
+ *
+ * @param selectedCell Cell that became selected
+ *
  * @param index Index of selected item in selection view
  */
-- (void)horizontalSelection:(EHHorizontalSelectionView * _Nonnull)selectionView didSelectObjectAtIndex:(NSUInteger)index;
+- (void)horizontalSelection:(EHHorizontalSelectionView *)selectionView didSelectObject:(EHHorizontalViewCell *)selectedCell atIndex:(NSUInteger)index;
+
 
 /*!
  * @brief _optional_ method for custom EHHorizontalViewCells
@@ -164,6 +201,8 @@
  *
  * @param indexPath Index of item
  */
-- (EHHorizontalViewCell * _Nullable)selectionView:(EHHorizontalSelectionView * _Nonnull)selectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (EHHorizontalViewCell * _Nullable)selectionView:(EHHorizontalSelectionView *)selectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
+
+NS_ASSUME_NONNULL_END
 

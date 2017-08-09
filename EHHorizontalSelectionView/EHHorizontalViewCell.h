@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-static CGFloat _EHDefaultGap = 10;
-static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
+extern const CGFloat _EHDefaultGap;
 
+NS_ASSUME_NONNULL_BEGIN
+IB_DESIGNABLE
 @interface EHHorizontalViewCell : UICollectionViewCell
 
 
@@ -185,3 +186,5 @@ static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles  = nil;
 - (void)setTitleLabelText:(nullable NSString  *)text;
 
 @end
+
+NS_ASSUME_NONNULL_END

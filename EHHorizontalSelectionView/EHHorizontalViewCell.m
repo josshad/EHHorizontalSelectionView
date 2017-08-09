@@ -8,9 +8,12 @@
 
 #import "EHHorizontalViewCell.h"
 
+
+const CGFloat _EHDefaultGap = 10;
+
+static NSMutableDictionary * _Nullable _EHHorisontalSelectionStyles = nil;
+
 @implementation EHHorizontalViewCell
-
-
 
 - (void)awakeFromNib {
     [self createSelectedView];
@@ -88,8 +91,6 @@
     _textColor = textColor;
     self.titleLabel.textColor = textColor;
 }
-
-
 
 - (void)setAltTextColor:(UIColor *)textColor
 {

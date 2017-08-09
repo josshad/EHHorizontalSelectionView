@@ -10,17 +10,22 @@
 #import "EHHorizontalViewCell.h"
 
 
+typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
+    EHHorizontalSelectionViewDefault = 0,
+    EHHorizontalSelectionViewLine = 1,
+    EHHorizontalSelectionViewRound = 2
+};
 
-@interface EHHorizontalSelectionView () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface EHHorizontalSelectionView () <UICollectionViewDataSource, UICollectionViewDelegate, EHHorizontalSelectionViewProtocol>
 
 @property (nonatomic, strong) UICollectionView * collectionView;
+@property (nonatomic) IBInspectable NSUInteger type;
 
 @end
 
 
 @implementation EHHorizontalSelectionView
 {
-
     UICollectionViewFlowLayout * _flowLayout;
     NSIndexPath * _selectedIndexPath;
     EHHorizontalViewCell *_selectedCell;
@@ -29,6 +34,7 @@
     NSString * _identifier;
     NSUInteger _objectsCount;
     UINib * _nib;
+    BOOL _startScrolling;
 }
 
 #pragma mark - initializers
@@ -52,6 +58,12 @@
     return self;
 }
 
+- (void)prepareForInterfaceBuilder {
+    [super prepareForInterfaceBuilder];
+    self.delegate = self;
+    [self reloadData];
+}
+
 #pragma mark - public
 - (void)registerCellWithClass:(Class)class
 {
@@ -65,7 +77,7 @@
 
 - (void)registerCellWithClass:(Class _Nonnull)class reuseIdentifier:(NSString *)identifier
 {
-    NSCAssert([class isSubclassOfClass:[EHHorizontalViewCell class]],  @"registerCellWithClass: received class that is not subclass of EHHorizontalViewCell class" );
+    NSAssert([class isSubclassOfClass:[EHHorizontalViewCell class]],  @"registerCellWithClass: received class that is not subclass of EHHorizontalViewCell class" );
     _class = class;
     
     if (!identifier || [identifier length] == 0)
@@ -81,7 +93,7 @@
 
 - (void)registerCellNib:(UINib * _Nonnull)nib withClass:(Class _Nonnull)class reuseIdentifier:(NSString *)identifier
 {
-    NSCAssert([class isSubclassOfClass:[EHHorizontalViewCell class]],  @"registerCellNibWithName:withClass: received class that is not subclass of EHHorizontalViewCell class" );
+    NSAssert([class isSubclassOfClass:[EHHorizontalViewCell class]],  @"registerCellNibWithName:withClass: received class that is not subclass of EHHorizontalViewCell class" );
     _class = class;
     if (!identifier || [identifier length] == 0)
     {
@@ -117,6 +129,48 @@
     [_collectionView reloadData];
 }
 
+#pragma mark - Accessors & Mutators 
+
+- (void)setTextColor:(UIColor *)textColor
+{
+    _textColor = textColor;
+    [self reloadData];
+}
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    _tintColor = tintColor;
+    [self reloadData];
+}
+
+- (void)setAltTextColor:(UIColor *)altTextColor
+{
+    _altTextColor = altTextColor;
+   [self reloadData];
+}
+
+- (void)setType:(NSUInteger)type {
+    if (_type != type) {
+        _type = type;
+        NSBundle * frameworkBundle = [NSBundle bundleForClass:[EHHorizontalViewCell class]];
+        NSURL * bundleURL = [[frameworkBundle resourceURL] URLByAppendingPathComponent:@"EHHorizontalSelectionView.bundle"];
+        NSBundle * podBundle = [NSBundle bundleWithURL:bundleURL];
+        podBundle = (podBundle != nil) ? podBundle : frameworkBundle;
+        
+        switch (_type) {
+            case EHHorizontalSelectionViewLine:
+                [self registerCellWithClass:[EHHorizontalLineViewCell class]];
+                break;
+            case EHHorizontalSelectionViewRound:
+                [self registerCellWithClass:[EHRoundedHorizontalViewCell class]];
+                break;
+            default:
+                [self registerCellNib:[UINib nibWithNibName:@"EHHorizontalViewCell"  bundle:podBundle] withClass:[EHHorizontalViewCell class]];
+        }
+    }
+    [self reloadData];
+}
+
 #pragma mark - private
 - (void)startView
 {
@@ -124,10 +178,6 @@
     {
         _cellGap = NSIntegerMin;
         _needCentered = NSIntegerMin;
-        _fontMedium = nil;
-        _font = nil;
-        _tintColor = nil;
-        _textColor = nil;
         _selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         _flowLayout  = [[UICollectionViewFlowLayout alloc] init];
         [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -149,10 +199,18 @@
         NSBundle * frameworkBundle = [NSBundle bundleForClass:[EHHorizontalViewCell class]];
         NSURL * bundleURL = [[frameworkBundle resourceURL] URLByAppendingPathComponent:@"EHHorizontalSelectionView.bundle"];
         NSBundle * podBundle = [NSBundle bundleWithURL:bundleURL];
-        
         podBundle = (podBundle != nil) ? podBundle : frameworkBundle;
         
-        [self registerCellNib:[UINib nibWithNibName:@"EHHorizontalViewCell"  bundle:podBundle] withClass:[EHHorizontalViewCell class]];
+        switch (self.type) {               
+            case EHHorizontalSelectionViewLine:
+                [self registerCellWithClass:[EHHorizontalLineViewCell class]];
+                break;
+            case EHHorizontalSelectionViewRound:
+                [self registerCellWithClass:[EHRoundedHorizontalViewCell class]];
+                break;
+            default:
+                [self registerCellNib:[UINib nibWithNibName:@"EHHorizontalViewCell"  bundle:podBundle] withClass:[EHHorizontalViewCell class]];
+        }
         
         [self addSubview:_collectionView];
         
@@ -215,7 +273,7 @@
     }
     else
     {
-        EHHorizontalViewCell * cell = [[_nib instantiateWithOwner:nil options:nil] lastObject];
+        EHHorizontalViewCell * cell = [[_nib instantiateWithOwner:nil options:nil] firstObject];
         return cell.bounds.size;
     }
 }
@@ -271,29 +329,29 @@
     
     [cell setTitleLabelText:[_delegate titleForItemAtIndex:indexPath.row forHorisontalSelection:self]];
     
-    if (_tintColor)
+    if (self.tintColor)
     {
-        [cell setTintColor:_tintColor];
+        [cell setTintColor:self.tintColor];
     }
     
-    if (_textColor)
+    if (self.textColor)
     {
-        [cell setTextColor:_textColor];
+        [cell setTextColor:self.textColor];
     }
     
-    if (_altTextColor)
+    if (self.altTextColor)
     {
-        [cell setAltTextColor:_altTextColor];
+        [cell setAltTextColor:self.altTextColor];
     }
     
-    if (_font)
+    if (self.font)
     {
-        [cell setFont:_font];
+        [cell setFont:self.font];
     }
     
-    if (_fontMedium)
+    if (self.fontMedium)
     {
-        [cell setFontMedium:_fontMedium];
+        [cell setFontMedium:self.fontMedium];
     }
     
     cell.selectedCell = NO;
@@ -338,18 +396,50 @@
 
     if (_selectedIndexPath.row < _objectsCount)
     {
-        [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
-        
+    
+        [UIView animateWithDuration:0.3 animations:^{
+            [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+        } completion:^(BOOL finished){
+            if (_delegate && [_delegate respondsToSelector:@selector(horizontalSelection:didSelectObjectAtIndex:)])
+            {
+                [_delegate horizontalSelection:self didSelectObjectAtIndex:_selectedIndexPath.row];
+            }
+            
+            if (_delegate && [_delegate respondsToSelector:@selector(horizontalSelection:didSelectObject:atIndex:)])
+            {
+                [_delegate horizontalSelection:self didSelectObject:_selectedCell atIndex:_selectedIndexPath.row];
+            }
+        }];
         [newCell setSelectedCell:YES fromCellRect:_lastCellRect];
         _lastCellRect = newCell.frame;
         
-        if (_delegate && [_delegate respondsToSelector:@selector(horizontalSelection:didSelectObjectAtIndex:)])
+        if (_delegate && [_delegate respondsToSelector:@selector(horizontalSelection:willSelectObjectAtIndex:)])
         {
-            [_delegate horizontalSelection:self didSelectObjectAtIndex:_selectedIndexPath.row];
+            [_delegate horizontalSelection:self willSelectObjectAtIndex:_selectedIndexPath.row];
+        }
+        
+        if (_delegate && [_delegate respondsToSelector:@selector(horizontalSelection:willSelectObject:atIndex:)])
+        {
+            [_delegate horizontalSelection:self willSelectObject:_selectedCell atIndex:_selectedIndexPath.row];
         }
     }
 }
 
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    
+}
 
+#pragma mark - EHHorizontalSelectionViewProtocol
+
+- (NSUInteger)numberOfItemsInHorizontalSelection:(EHHorizontalSelectionView *)hSelView
+{
+    return 3;
+}
+
+- (NSString *)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView *)hSelView
+{
+    return [NSString stringWithFormat:@"Title %lu",index];
+}
 
 @end
