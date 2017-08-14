@@ -35,6 +35,7 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
     NSUInteger _objectsCount;
     UINib * _nib;
     BOOL _startScrolling;
+    BOOL _hasChanges;
 }
 
 #pragma mark - initializers
@@ -131,6 +132,12 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
 
 #pragma mark - Accessors & Mutators 
 
+- (void)setNeedCentered:(BOOL)needCentered {
+    _needCentered = needCentered;
+    _hasChanges = YES;
+    [self reloadData];
+}
+
 - (void)setTextColor:(UIColor *)textColor
 {
     _textColor = textColor;
@@ -177,7 +184,6 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
     if (!_collectionView)
     {
         _cellGap = NSIntegerMin;
-        _needCentered = NSIntegerMin;
         _selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         _flowLayout  = [[UICollectionViewFlowLayout alloc] init];
         [_flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -246,23 +252,18 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
         
         UIFont * font;
         
-        if (!_font)
-        {
+        if (!_font) {
             font = [_class font];
-        }
-        else
-        {
+        } else {
             font = _font;
         }
         
         
         float gap;
-        if (_cellGap == NSIntegerMin)
-        {
+        if (_cellGap == NSIntegerMin) { //Default behaviour
+
             gap = [_class cellGap];
-        }
-        else
-        {
+        } else {
             gap = _cellGap;
         }
         
@@ -270,9 +271,7 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
         CGSize strSize = [name sizeWithAttributes:@{NSFontAttributeName : font}];
         
         return CGSizeMake(strSize.width + gap, frame.size.height);
-    }
-    else
-    {
+    } else {
         EHHorizontalViewCell * cell = [[_nib instantiateWithOwner:nil options:nil] firstObject];
         return cell.bounds.size;
     }
@@ -281,17 +280,13 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     BOOL needCentered = NO;
-    if (_needCentered >= 0)
-    {
-        needCentered = _needCentered;
-    }
-    else if ([_class isSubclassOfClass:[EHHorizontalViewCell class]])
-    {
+    if (_hasChanges) {
+        needCentered = self.needCentered;
+    } else if ([_class isSubclassOfClass:[EHHorizontalViewCell class]]) { //default behaviour
         needCentered = [_class needCentered];
     }
     
-    if (needCentered)
-    {
+    if (needCentered) {
         float width = 0;
         for (int i = 0; i < _objectsCount; i++)
         {
@@ -329,34 +324,28 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
     
     [cell setTitleLabelText:[_delegate titleForItemAtIndex:indexPath.row forHorisontalSelection:self]];
     
-    if (self.tintColor)
-    {
+    if (self.tintColor) {
         [cell setTintColor:self.tintColor];
     }
     
-    if (self.textColor)
-    {
+    if (self.textColor) {
         [cell setTextColor:self.textColor];
     }
     
-    if (self.altTextColor)
-    {
+    if (self.altTextColor) {
         [cell setAltTextColor:self.altTextColor];
     }
     
-    if (self.font)
-    {
+    if (self.font) {
         [cell setFont:self.font];
     }
     
-    if (self.fontMedium)
-    {
+    if (self.fontMedium) {
         [cell setFontMedium:self.fontMedium];
     }
     
     cell.selectedCell = NO;
-    if (_selectedIndexPath.row == indexPath.row)
-    {
+    if (_selectedIndexPath.row == indexPath.row) {
         _lastCellRect = cell.frame;
         cell.selectedCell = YES;
         _selectedCell = cell;
@@ -439,7 +428,7 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
 
 - (NSString *)titleForItemAtIndex:(NSUInteger)index forHorisontalSelection:(EHHorizontalSelectionView *)hSelView
 {
-    return [NSString stringWithFormat:@"Title %lu",index];
+    return [NSString stringWithFormat:@"Title %lu",(unsigned long)index];
 }
 
 @end
