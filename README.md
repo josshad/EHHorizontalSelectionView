@@ -63,6 +63,13 @@ In case of "the behavior of the UICollectionViewFlowLayout is not defined becaus
 
 ## Customization
 
+### IB customization
+After 1.3.0 you can use IB to change selection view apperance. There was presented a set of properties allowing to change the appearance of the view.
+<img src="https://josshad.github.io/EHHorizontalSelectionView/EHIBProperties.png">
+EHHorizontalSelcetionView is now marked as IBDesignable and you can see customization on your xib or storyboard
+<img src="https://josshad.github.io/EHHorizontalSelectionView/EHIBXib.png">
+
+
 ### Color
 You can change default tint color for cell of selected type
 
