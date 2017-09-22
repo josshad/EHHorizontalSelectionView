@@ -414,6 +414,16 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
     }
 }
 
+-(void)deselect
+{
+    [_selectedCell setSelectedCell:NO fromCellRect:_lastCellRect];
+
+    if (_delegate && [_delegate respondsToSelector:@selector(horizontalSelection:didSelectObjectAtIndex:)])
+    {
+        [_delegate horizontalSelection:self didSelectObjectAtIndex: -1];
+    }
+}
+
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
     

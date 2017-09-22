@@ -124,6 +124,10 @@ IB_DESIGNABLE
  */
 - (void)reloadData;
 
+/*!
+ * @brief deselects selected cell
+ */
+- (void)deselect;
 
 
 @end
