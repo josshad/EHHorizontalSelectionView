@@ -113,9 +113,14 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
     return [self.collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
 }
 
-- (NSUInteger)selectedIndex
+- (NSNumber * _Nullable)selectedIndex
 {
-    return _selectedIndexPath.row;
+    if (!_selectedIndexPath)
+    {
+        return NULL;
+    }
+
+    return [[NSNumber alloc]initWithUnsignedLong:_selectedIndexPath.row];
 }
 
 - (void)selectIndex:(NSUInteger)index
