@@ -12,6 +12,7 @@
 #import "CustomHorizontalViewCell.h"
 
 @interface ViewController () <EHHorizontalSelectionViewProtocol>
+@property (weak, nonatomic) IBOutlet UIButton *deselectButton;
 
 @end
 
@@ -30,7 +31,8 @@
     _hSelView1.delegate = self;
     _hSelView2.delegate = self;
     _hSelView3.delegate = self;
-    
+
+    [_deselectButton addTarget:self action:@selector(deselectButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 
     [_hSelView3 registerCellNib:[UINib nibWithNibName:@"CustomHorizontalViewCell" bundle:nil] withClass:[CustomHorizontalViewCell class]];
     
@@ -99,6 +101,13 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithStartColor:[UIColor colorWithHex:0x1f1c27] endColor:[UIColor colorWithHex:0x544a57] size:CGSizeMake(1, self.view.bounds.size.height)]];
     self.navigationController.navigationBarHidden = YES;
     [super viewWillAppear:animated];
+}
+
+- (void) deselectButtonTapped
+{
+    [_hSelView1 deselect];
+    [_hSelView2 deselect];
+    [_hSelView3 deselect];
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
