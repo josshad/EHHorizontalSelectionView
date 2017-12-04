@@ -117,13 +117,17 @@ IB_DESIGNABLE
 /*!
  * @brief returns selected index
  */
-- (NSUInteger)selectedIndex;
+- (NSNumber * _Nullable)selectedIndex;
 
 /*!
  * @brief returns selection view data
  */
 - (void)reloadData;
 
+/*!
+ * @brief deselects selected cell
+ */
+- (void)deselect;
 
 
 @end

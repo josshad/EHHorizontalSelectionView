@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
 @implementation EHHorizontalSelectionView
 {
     UICollectionViewFlowLayout * _flowLayout;
-    NSIndexPath * _selectedIndexPath;
+    NSIndexPath * _Nullable  _selectedIndexPath;
     EHHorizontalViewCell *_selectedCell;
     CGRect _lastCellRect;
     Class _class;
@@ -113,9 +113,14 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
     return [self.collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
 }
 
-- (NSUInteger)selectedIndex
+- (NSNumber * _Nullable)selectedIndex
 {
-    return _selectedIndexPath.row;
+    if (!_selectedIndexPath)
+    {
+        return NULL;
+    }
+
+    return [[NSNumber alloc]initWithUnsignedLong:_selectedIndexPath.row];
 }
 
 - (void)selectIndex:(NSUInteger)index
@@ -412,6 +417,13 @@ typedef NS_ENUM(NSUInteger, EHHorizontalSelectionViewType) {
             [_delegate horizontalSelection:self willSelectObject:_selectedCell atIndex:_selectedIndexPath.row];
         }
     }
+}
+
+-(void)deselect
+{
+    [_selectedCell setSelectedCell:NO fromCellRect:_lastCellRect];
+
+    _selectedIndexPath = NULL;
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
