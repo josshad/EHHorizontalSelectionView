@@ -117,7 +117,7 @@ IB_DESIGNABLE
 /*!
  * @brief returns selected index
  */
-- (NSNumber * _Nullable)selectedIndex;
+- (NSUInteger)selectedIndex;
 
 /*!
  * @brief returns selection view data
